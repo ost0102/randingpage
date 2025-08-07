@@ -7,32 +7,38 @@ import Swiper from "../../node_modules/swiper/swiper-bundle.mjs";
 gsap.registerPlugin(TextPlugin);
 gsap.registerPlugin(ScrollTrigger);
 
-// lenis.stop();
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        lenis.start();
+        lenis.scrollTo(0, { immediate: true });
+    }, 100);
+});
 
-// 폰트 로드 완료 후 애니메이션 실행
+window.addEventListener('beforeunload', () => {
+    lenis.scrollTo(0, { immediate: true });
+});
+
+// 이후에 폰트 로드 후 애니메이션 실행 (스크롤 이동과 분리)
 document.fonts.ready.then(() => {
-    // 초기 상태 설정
+    // 애니메이션 시작 코드...
     gsap.set([".s1_top-tit h2", ".s1_bottom-tit h2"], { opacity: 1 });
-    
-    // SplitType 생성
+
     let splitTop = new SplitType(".s1_top-tit h2", {
         types: "chars, words",
         tagName: "span"
     });
-    
+
     let splitBottom = new SplitType(".s1_bottom-tit h2", {
         types: "chars, words",
         tagName: "span"
     });
-    
-    // 초기 상태 설정
+
     gsap.set([...splitTop.chars, ...splitBottom.chars], {
         yPercent: "random([-300, 300])",
         xPercent: "random([-300, 300])",
         opacity: 0
     });
-    
-    // 애니메이션 실행
+
     gsap.to([...splitTop.chars, ...splitBottom.chars], {
         duration: 1.3,
         yPercent: 0,
