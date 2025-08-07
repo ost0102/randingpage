@@ -9,28 +9,44 @@ gsap.registerPlugin(ScrambleTextPlugin);
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(SplitText);
 
-lenis.stop();
+// lenis.stop();
 
-const s1Tl1 = gsap.timeline({
-    onComplete: () => {
-        lenis.start();
-    }
+// 폰트 로드 완료 후 애니메이션 실행
+document.fonts.ready.then(() => {
+    // 초기 상태 설정
+    gsap.set([".s1_top-tit h2", ".s1_bottom-tit h2"], { opacity: 1 });
+    
+    // SplitText 생성
+    let splitTop = SplitText.create(".s1_top-tit h2", {
+        type: "chars, words",
+        mask: "chars"
+    });
+    
+    let splitBottom = SplitText.create(".s1_bottom-tit h2", {
+        type: "chars, words", 
+        mask: "chars"
+    });
+    
+    // 초기 상태 설정
+    gsap.set([...splitTop.chars, ...splitBottom.chars], {
+        yPercent: "random([-300, 300])",
+        xPercent: "random([-300, 300])",
+        opacity: 0
+    });
+    
+    // 애니메이션 실행
+    gsap.to([...splitTop.chars, ...splitBottom.chars], {
+        duration: 1.3,
+        yPercent: 0,
+        xPercent: 0,
+        opacity: 1,
+        stagger: {
+            from: "random",
+            amount: 0.6,
+        },
+        ease: "power3.out"
+    });
 });
-s1Tl1
-    .to(".s1_top-tit h2", {
-        duration: 4,
-        scrambleText: {
-            text: "A fluttering",
-            revealDelay: 1, 
-        }
-    },"a")
-    .to(".s1_bottom-tit h2", {
-        duration: 4,
-        scrambleText: {
-            text: "website",
-            revealDelay: 1, 
-        }
-    },"a")
     
 
 // 비디오 로드 확인 후 타임라인 생성
@@ -93,17 +109,42 @@ const s2Tl = gsap.timeline({
         toggleActions: "play none none none",
     }
 });
+
 gsap.set(".s2-tit p", {
     y: 200,
     opacity: 0
-})
+});
+
+// s2-tit h2 초기 상태 설정
+gsap.set(".s2-tit h2", { opacity: 1 });
+
 s2Tl
-    .to(".s2-tit h2", {
-        duration: 2,
-        scrambleText: {
-            text: "WHO AM I",
-            revealDelay: 1, 
-        }
+    .add(() => {
+        // SplitText 생성
+        let splitS2 = SplitText.create(".s2-tit h2", {
+            type: "chars, words",
+            mask: "chars"
+        });
+        
+        // 초기 상태 설정
+        gsap.set(splitS2.chars, {
+            yPercent: "random([-300, 300])",
+            xPercent: "random([-300, 300])",
+            opacity: 0
+        });
+        
+        // 애니메이션 실행
+        gsap.to(splitS2.chars, {
+            duration: 1.3,
+            yPercent: 0,
+            xPercent: 0,
+            opacity: 1,
+            stagger: {
+                from: "random",
+                amount: 0.6,
+            },
+            ease: "power3.out"
+        });
     })
     .to(".s2-tit p", {
         y: 0,
@@ -173,25 +214,46 @@ const s3Tl1 = gsap.timeline({
         trigger: ".s3",
         start: "top 60%",
         end: "20% bottom",
-        scrub: true,
         toggleActions: "play none none none",
     }
 });
+
+// s3-tit 초기 상태 설정
+gsap.set([".s3_top-tit", ".s3_bottom-tit"], { opacity: 1 });
+
 s3Tl1
-    .to(".s3_top-tit", {
-        duration: 6,
-        scrambleText: {
-            text: "FLUTTER",
-            revealDelay: 1, 
-        }
-    },"a")
-    .to(".s3_bottom-tit", {
-        duration: 6,
-        scrambleText: {
-            text: "PERFORMANCE",
-            revealDelay: 1, 
-        }
-    },"a")
+    .add(() => {
+        // SplitText 생성
+        let splitS3Top = SplitText.create(".s3_top-tit", {
+            type: "chars, words",
+            mask: "chars"
+        });
+        
+        let splitS3Bottom = SplitText.create(".s3_bottom-tit", {
+            type: "chars, words",
+            mask: "chars"
+        });
+        
+        // 초기 상태 설정
+        gsap.set([...splitS3Top.chars, ...splitS3Bottom.chars], {
+            yPercent: "random([-300, 300])",
+            xPercent: "random([-300, 300])",
+            opacity: 0
+        });
+        
+        // 애니메이션 실행
+        gsap.to([...splitS3Top.chars, ...splitS3Bottom.chars], {
+            duration: 1.3,
+            yPercent: 0,
+            xPercent: 0,
+            opacity: 1,
+            stagger: {
+                from: "random",
+                amount: 0.6,
+            },
+            ease: "power3.out"
+        });
+    })
 
 
 let sect3 = document.querySelector('.s3');
@@ -268,21 +330,42 @@ const s4Tl = gsap.timeline({
     }
 });
 
+// s4-tit 초기 상태 설정
+gsap.set(".s4-tit h2", { opacity: 1 });
+
 s4Tl
-    .to(".s4-tit h2:nth-child(1)", {
-        duration: 2,
-        scrambleText: {
-            text: "WHAT",
-            revealDelay: 1, 
-        }
-    },"a")
-    .to(".s4-tit h2:nth-child(2)", {
-        duration: 2,
-        scrambleText: {
-            text: "I DO",
-            revealDelay: 1, 
-        }
-    },"a")
+    .add(() => {
+        // SplitText 생성
+        let splitS4First = SplitText.create(".s4-tit h2:nth-child(1)", {
+            type: "chars, words",
+            mask: "chars"
+        });
+        
+        let splitS4Second = SplitText.create(".s4-tit h2:nth-child(2)", {
+            type: "chars, words",
+            mask: "chars"
+        });
+        
+        // 초기 상태 설정
+        gsap.set([...splitS4First.chars, ...splitS4Second.chars], {
+            yPercent: "random([-300, 300])",
+            xPercent: "random([-300, 300])",
+            opacity: 0
+        });
+        
+        // 애니메이션 실행
+        gsap.to([...splitS4First.chars, ...splitS4Second.chars], {
+            duration: 1.3,
+            yPercent: 0,
+            xPercent: 0,
+            opacity: 1,
+            stagger: {
+                from: "random",
+                amount: 0.6,
+            },
+            ease: "power3.out"
+        });
+    })
 
 let isMatterFuncTriggered = false;
 const s4Tl2 = gsap.timeline({
