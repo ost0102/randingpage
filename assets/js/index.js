@@ -2,6 +2,7 @@ import { gsap } from "../../node_modules/gsap/index.js";
 import { TextPlugin } from "../../node_modules/gsap/TextPlugin.js";
 import { ScrollTrigger } from "../../node_modules/gsap/ScrollTrigger.js";
 import { SplitText } from "../../node_modules/gsap/SplitText.js";
+import SplitType from "../../node_modules/split-type/dist/index.js";
 import Swiper from "../../node_modules/swiper/swiper-bundle.mjs";
 
 gsap.registerPlugin(TextPlugin);
@@ -16,15 +17,15 @@ document.fonts.ready.then(() => {
     // 초기 상태 설정
     gsap.set([".s1_top-tit h2", ".s1_bottom-tit h2"], { opacity: 1 });
     
-    // SplitText 생성
-    let splitTop = SplitText.create(".s1_top-tit h2", {
-        type: "chars, words",
-        mask: "chars"
+    // SplitType 생성
+    let splitTop = new SplitType(".s1_top-tit h2", {
+        types: "chars, words",
+        tagName: "span"
     });
     
-    let splitBottom = SplitText.create(".s1_bottom-tit h2", {
-        type: "chars, words", 
-        mask: "chars"
+    let splitBottom = new SplitType(".s1_bottom-tit h2", {
+        types: "chars, words",
+        tagName: "span"
     });
     
     // 초기 상태 설정
@@ -120,10 +121,10 @@ gsap.set(".s2-tit h2", { opacity: 1 });
 
 s2Tl
     .add(() => {
-        // SplitText 생성
-        let splitS2 = SplitText.create(".s2-tit h2", {
-            type: "chars, words",
-            mask: "chars"
+        // SplitType 생성
+        let splitS2 = new SplitType(".s2-tit h2", {
+            types: "chars, words",
+            tagName: "span"
         });
         
         // 초기 상태 설정
@@ -180,9 +181,9 @@ gsap.fromTo(".devlop",
     }
 );
 
-let s2Split1 = new SplitText(".s2-contents-tit-p1", { type: "chars" });
+let s2Split1 = new SplitType(".s2-contents-tit-p1", { types: "chars", tagName: "span" });
 let s2Split1Char = s2Split1.chars;
-let s2Split2 = new SplitText(".s2-contents-tit-p2", { type: "chars" });
+let s2Split2 = new SplitType(".s2-contents-tit-p2", { types: "chars", tagName: "span" });
 let s2Split2Char = s2Split2.chars;
 
 gsap.from([...s2Split1Char, ...s2Split2Char], {
@@ -223,15 +224,15 @@ gsap.set([".s3_top-tit", ".s3_bottom-tit"], { opacity: 1 });
 
 s3Tl1
     .add(() => {
-        // SplitText 생성
-        let splitS3Top = SplitText.create(".s3_top-tit", {
-            type: "chars, words",
-            mask: "chars"
+        // SplitType 생성
+        let splitS3Top = new SplitType(".s3_top-tit", {
+            types: "chars, words",
+            tagName: "span"
         });
         
-        let splitS3Bottom = SplitText.create(".s3_bottom-tit", {
-            type: "chars, words",
-            mask: "chars"
+        let splitS3Bottom = new SplitType(".s3_bottom-tit", {
+            types: "chars, words",
+            tagName: "span"
         });
         
         // 초기 상태 설정
@@ -335,15 +336,15 @@ gsap.set(".s4-tit h2", { opacity: 1 });
 
 s4Tl
     .add(() => {
-        // SplitText 생성
-        let splitS4First = SplitText.create(".s4-tit h2:nth-child(1)", {
-            type: "chars, words",
-            mask: "chars"
+        // SplitType 생성
+        let splitS4First = new SplitType(".s4-tit h2:nth-child(1)", {
+            types: "chars, words",
+            tagName: "span"
         });
         
-        let splitS4Second = SplitText.create(".s4-tit h2:nth-child(2)", {
-            type: "chars, words",
-            mask: "chars"
+        let splitS4Second = new SplitType(".s4-tit h2:nth-child(2)", {
+            types: "chars, words",
+            tagName: "span"
         });
         
         // 초기 상태 설정

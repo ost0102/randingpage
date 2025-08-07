@@ -2,6 +2,7 @@
   "dependencies": {
     "gsap": "^3.13.0",
     "matter-js": "^0.20.0",
+    "split-type": "^0.3.4",
     "swiper": "^11.2.10"
   }
 }
