@@ -1,8 +1,18 @@
 {
+  "name": "flutter-portfolio",
+  "version": "1.0.0",
+  "description": "Flutter Portfolio Website",
+  "main": "index.html",
+  "scripts": {
+    "start": "live-server",
+    "dev": "live-server --port=3000"
+  },
   "dependencies": {
-    "gsap": "^3.13.0",
-    "matter-js": "^0.20.0",
-    "split-type": "^0.3.4",
-    "swiper": "^11.2.10"
-  }
+    "live-server": "^1.2.2"
+  },
+  "devDependencies": {},
+  "keywords": ["portfolio", "web", "gsap", "animation"],
+  "author": "Your Name",
+  "license": "MIT",
+  "note": "Libraries are loaded via CDN: GSAP, SplitType, Swiper, Matter.js, Lenis"
 }
