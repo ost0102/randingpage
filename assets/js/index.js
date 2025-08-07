@@ -5,7 +5,6 @@ import SplitType from "../../node_modules/split-type/dist/index.js";
 import Swiper from "../../node_modules/swiper/swiper-bundle.mjs";
 
 gsap.registerPlugin(TextPlugin);
-gsap.registerPlugin(ScrambleTextPlugin);
 gsap.registerPlugin(ScrollTrigger);
 
 // lenis.stop();
