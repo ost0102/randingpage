@@ -1,0 +1,31 @@
+@use '../base/var';
+
+.header{
+    position:fixed;
+    top: 0;
+    padding: 20px;
+    width: 100%;
+    z-index: 10;
+    background: rgba(255, 255, 255, .3);
+    backdrop-filter: blur(10px);
+    &-inner{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .logo{
+            a{
+                color: var.$Mcl;
+                font-family: var.$Lft;
+                font-size: 2.4rem;
+                font-weight: 700;
+            }
+        }
+        .nav{
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-family: var.$Rft;
+            letter-spacing: -1.5px;
+        }
+    }
+}

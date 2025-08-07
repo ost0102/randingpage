@@ -1,0 +1,18 @@
+@use '../base/var';
+.footer{
+    height: 10vh;
+    &-inner{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+        font-family: var.$Mft;
+        font-weight: 300;
+        font-size: 18px;
+        height: 100%;
+        a{
+            text-decoration: underline;
+            text-underline-position: under;
+        }
+    }
+}
