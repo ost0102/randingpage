@@ -1,14 +1,12 @@
 import { gsap } from "../../node_modules/gsap/index.js";
 import { TextPlugin } from "../../node_modules/gsap/TextPlugin.js";
 import { ScrollTrigger } from "../../node_modules/gsap/ScrollTrigger.js";
-import { SplitText } from "../../node_modules/gsap/SplitText.js";
 import SplitType from "../../node_modules/split-type/dist/index.js";
 import Swiper from "../../node_modules/swiper/swiper-bundle.mjs";
 
 gsap.registerPlugin(TextPlugin);
 gsap.registerPlugin(ScrambleTextPlugin);
 gsap.registerPlugin(ScrollTrigger);
-gsap.registerPlugin(SplitText);
 
 // lenis.stop();
 
