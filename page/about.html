@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Flutter">
+    <meta property="og:description" content="승택의 랜딩페이지">
+    <meta property="og:image" content="https://ost0102.github.io/randingpage/assets/images/og-img.png">
+    <meta property="og:url" content="https://ost0102.github.io/randingpage/">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="../assets/images/favicon.ico">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://github.hubspot.com/odometer/themes/odometer-theme-default.css">
+    
+    <!-- GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/TextPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.8/odometer.min.js"></script>
+
+    <!-- SplitType CDN -->
+    <script src="https://unpkg.com/split-type"></script>
+    
+    <!-- Swiper CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
+    <!-- Lenis CDN -->
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script> 
+    
+    <!-- Matter.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.20.0/matter.min.js"></script>
+    <script>
+        // 브라우저의 스크롤 복원 기능 비활성화
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+    </script>
+    <script src="../assets/js/common.js"></script>
+    <script src="../assets/js/about.js" defer></script>
+    <title>Flutter</title>
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="header-inner">
+            <h1 class="logo">
+                <a href="/">Flutter</a>
+            </h1>
+            <ul class="nav">
+                <li>
+                    <a href="./page/about.html">ABOUT ME</a>
+                </li>
+                <li>
+                    <a href="">PORTFOLIO</a>
+                </li>
+                <li>
+                    <a href="">CONTACT</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <section class="about-s1">
+            <div class="page-tit">
+                <h1>ABOUT ME</h1>
+                <p>페이지에 스토리를 입혀 사용자를 설레게하는 <strong>웹 퍼블리셔</strong></p>
+            </div>
+        </section>
+        <section class="about-s2">
+            <div class="sticky">                
+                <div class="about-s2-inner">
+                    <div class="about-s2-tit">
+                        <h2>
+                            FLUTTER
+                            <p>
+                                PUBLISHER 
+                                <svg xmlns="http://www.w3.org/2000/svg"viewBox="0 0 24 24" fill="none">
+                                    <path d="M3 12H9L12 5L14 18.5L17.5 12H215" class="heart" stroke-width="2"stroke-linecap="round"stroke-linejoin="round"/>
+                                </svg>
+                            </p>
+                        </h2>
+                    </div>
+                    <div class="about-s2-txt">
+                        <p>
+                            웹 퍼블리셔는 단순히 디자인을 구현하는 것을 넘어,<br>
+                            사용성을 고려하고, 기술과 디자인을 결합하여<br>
+                            정확한 접근성의 전달로 최적의 사용자 경험을<br>
+                            제공하는 중요한 역할을 합니다.
+                            <br><br>
+                            저는 이러한 역할을 통해 직관적이고 아름다운 웹사이트를<br> 
+                            만들고, 방문해 주신 분들에게 설레는 경험을 제공하고자 합니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="about-s3">
+            <div class="about-s3-inner">
+                <div class="about-s3-tit">
+                    <h2>
+                        <p>
+                            <span>VALUE</span>
+                            <span class="img1"><img src="../assets/images/about/img1.png"></span>
+                            <span>THE</span>
+                        </p>
+                        <p>
+                            <span>USER'S</span>
+                            <span class="img2"><img src="../assets/images/about/img2.png"></span>
+                            <span>EXPERIENCE</span>
+                        </p>
+                    </h2>
+                </div>
+                <div class="about-s3-txt">
+                    <p>
+                        웹 개발은 단순한 마크업 작업을 넘어, 사용자의 경험을 완성하는 일이라고 생각합니다. <br><br>
+                        저는 웹 개발을 하면서 웹 접근성, 웹 표준을 준수하고, 다양한 디바이스에서도 일관된 UX를 제공, <br> 
+                        그리고 정확한 데이터를 받기 위해 노력해왔습니다.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section class="about-s4">
+            <div class="about-s4-inner">
+                <div class="about-s4-tit">
+                    <h2>
+                        <p>WHY</p>
+                        <p>
+                            <span>IS IT</span>
+                            <span>ME?</span>
+                        </p>
+                    </h2>
+                </div>
+                <div class="about-circle">
+                    <div class="sticky">
+                        <div class="s4_tl"></div>
+                        <div class="circle">
+                            <svg id="_레이어_2" data-name="레이어 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 760"> 
+                                <defs> 
+                                    <style>
+                                        .cls-1 {
+                                            fill: none;
+                                            stroke: #fff;
+                                            stroke-width: 3px;
+                                        }
+                                    </style> 
+                                </defs> 
+                                <g id="_레이어_1-2" data-name="레이어 1"> 
+                                    <path class="cls-1" d="M380,.5h0c209.59,0,379.5,169.91,379.5,379.5h0c0,209.59-169.91,379.5-379.5,379.5h0C170.41,759.5.5,589.59.5,380h0C.5,170.41,170.41.5,380,.5Z" ></path> 
+                                </g> 
+                            </svg>
+                            <div class="circle__inner">
+                                <p class="circle-txt1">경험에 중시하며</p>
+                                <p class="circle-txt2 ct">I value the user's experience</p>
+                                <p class="circle-txt3 ct">
+                                    웹을 만드는 방법은 만든 이에 따라 달라질 수 있습니다.
+                                    <br>
+                                    하지만 사용자는 결과만을 보고 느끼고 판단합니다.
+                                </p>
+                                <p class="circle-txt4 ct">
+                                    저는 사용자에게 특별한 경험을 제공하고, <br>
+                                    모든 이들에게 설레는 감정을 전달하고자 합니다.
+                                </p>
+                            </div>
+                            <div class="circle-img-txt">
+                                <p class="img-txt1">
+                                    수행한 프로젝트
+                                </p>
+                                <div class="img-txt2">
+                                    <span class="odometer01"></span>
+                                    <span class="val">Qty</span>
+                                    <strong class="plus">+</strong>
+                                </div>
+                            </div>
+                            <div class="circle-img to-left">
+                                <img src="../assets/images/about/img3.png">
+                                <div class="circle-img-txt">
+                                    <p class="img-txt1">
+                                        경험에 기여한 시간
+                                    </p>
+                                    <div class="img-txt2">
+                                        <span class="odometer02"></span>
+                                        <span class="val">YEARS</span>
+                                        <strong class="plus">+</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="circle-img to-right">
+                                <img src="../assets/images/about/img3.png">
+                                <div class="circle-img-txt">
+                                    <p class="img-txt1">
+                                        차별화된 기술
+                                    </p>
+                                    <p class="img-txt2 etc">
+                                        ASP.NET, PHP, MySQL, <br>Oracle, Git, SVN, <br>JIRA, Notion, Figma, Photoshop
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer></footer>
+</body>

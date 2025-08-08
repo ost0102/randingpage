@@ -1,13 +1,13 @@
-window.addEventListener('load', () => {
-    setTimeout(() => {
-        lenis.start();
-        lenis.scrollTo(0, { immediate: true });
-    }, 100);
-});
+// window.addEventListener('load', () => {
+//     setTimeout(() => {
+//         lenis.start();
+//         lenis.scrollTo(0, { immediate: true });
+//     }, 100);
+// });
 
-window.addEventListener('beforeunload', () => {
-    lenis.scrollTo(0, { immediate: true });
-});
+// window.addEventListener('beforeunload', () => {
+//     lenis.scrollTo(0, { immediate: true });
+// });
 
 // 이후에 폰트 로드 후 애니메이션 실행 (스크롤 이동과 분리)
 document.fonts.ready.then(() => {

@@ -1,6 +1,32 @@
+@use '../base/var';
 .sticky{
     position:sticky;
     top: 0;
     overflow: hidden;
     height: 100vh;
+}
+
+.page-tit{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    h1{
+        font-size: max(312px);
+        font-family: var.$Lft;
+        font-weight: 700;
+        line-height: 1;
+    }
+    p{
+        font-size: max(38px);  
+        font-weight: 300;
+        strong{
+            font-weight: 700;
+        }
+    }
 }
