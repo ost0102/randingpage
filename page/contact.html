@@ -1,13 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="Flutter">
-    <meta property="og:description" content="승택의 랜딩페이지">
+    
+    <!-- SEO 메타 태그 -->
+    <title>Contact - Flutter 웹 퍼블리셔 | 문의하기</title>
+    <meta name="description" content="웹 퍼블리셔 Flutter에게 문의하세요. 웹 개발, 포트폴리오 제작, 인터랙티브 웹사이트 제작 등 다양한 프로젝트 문의를 받습니다.">
+    <meta name="keywords" content="웹 퍼블리셔, Flutter, 문의하기, 웹 개발, 포트폴리오 제작, 인터랙티브 웹사이트, 프로젝트 문의">
+    <meta name="author" content="Flutter">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph 메타 태그 -->
+    <meta property="og:title" content="Contact - Flutter 웹 퍼블리셔">
+    <meta property="og:description" content="웹 퍼블리셔 Flutter에게 문의하세요. 웹 개발, 포트폴리오 제작, 인터랙티브 웹사이트 제작 등 다양한 프로젝트 문의를 받습니다.">
     <meta property="og:image" content="https://ost0102.github.io/randingpage/assets/images/og-img.png">
-    <meta property="og:url" content="https://ost0102.github.io/randingpage/">
+    <meta property="og:url" content="https://ost0102.github.io/randingpage/page/contact.html">
     <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Flutter Portfolio">
+    <meta property="og:locale" content="ko_KR">
+    
+    <!-- Twitter Card 메타 태그 -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contact - Flutter 웹 퍼블리셔">
+    <meta name="twitter:description" content="웹 퍼블리셔 Flutter에게 문의하세요. 웹 개발, 포트폴리오 제작, 인터랙티브 웹사이트 제작 등 다양한 프로젝트 문의를 받습니다.">
+    <meta name="twitter:image" content="https://ost0102.github.io/randingpage/assets/images/og-img.png">
+    
+    <!-- 추가 SEO 메타 태그 -->
+    <meta name="theme-color" content="#000000">
+    <meta name="msapplication-TileColor" content="#000000">
+    <link rel="canonical" href="https://ost0102.github.io/randingpage/page/contact.html">
+    
     <link rel="icon" href="../assets/images/favicon.ico">
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
@@ -42,84 +65,85 @@
     </script>
     <script src="../assets/js/common.js"></script>
     <script src="../assets/js/contact.js" defer></script>
-    <title>Flutter</title>
 </head>
 <body>
-    <header class="header" id="header">
+    <header class="header" id="header" role="banner">
         <div class="header-inner">
             <h1 class="logo">
-                <a href="../index.html">Flutter</a>
+                <a href="../index.html" aria-label="Flutter 홈으로 이동">Flutter</a>
             </h1>
-            <ul class="nav">
-                <li>
-                    <a href="/page/about.html">ABOUT ME</a>
-                </li>
-                <li>
-                    <a href="/page/portfolio.html">PORTFOLIO</a>
-                </li>
-                <li>
-                    <a href="">CONTACT</a>
-                </li>
-            </ul>
+            <nav class="nav" role="navigation" aria-label="주요 메뉴">
+                <ul class="nav">
+                    <li>
+                        <a href="/page/about.html">ABOUT ME</a>
+                    </li>
+                    <li>
+                        <a href="/page/portfolio.html">PORTFOLIO</a>
+                    </li>
+                    <li>
+                        <a href="" aria-current="page">CONTACT</a>
+                    </li>
+                </ul>
+            </nav>
         </div>
     </header>
-    <main>
-        <section class="contact-s1">
+    <main role="main">
+        <section class="contact-s1" aria-label="연락처">
             <div class="page-tit">
                 <h1>CONTACT</h1>
                 <p>한계를 넘어 증명하기. <strong>플러팅 웹</strong>을 위해 함께 해주세요.</p>
             </div>
         </section>
-        <section class="contact-s2">
+        <section class="contact-s2" aria-label="문의 폼">
             <div class="contact-inner">
-                <form name="frm" method="post" id="frm">
+                <form name="frm" method="post" id="frm" novalidate>
                     <div class="form-area">
                         <div class="item">
-                            <div class="form-tit">기업이름</div>
+                            <label for="company" class="form-tit">기업이름 <span class="required" aria-label="필수 입력 항목">*</span></label>
                             <div class="form-cont">
-                                <input type="text" name="company" id="company">
+                                <input type="text" name="company" id="company" required aria-describedby="company-error" aria-invalid="false">
                             </div>
-                            <span class="error">기업이름을 입력해주세요.</span>
+                            <span class="error" id="company-error" role="alert" aria-live="polite">기업이름을 입력해주세요.</span>
                         </div>
                         <div class="item">
-                            <div class="form-tit">성함</div>
+                            <label for="name" class="form-tit">성함 <span class="required" aria-label="필수 입력 항목">*</span></label>
                             <div class="form-cont">
-                                <input type="text" name="name" id="name">
+                                <input type="text" name="name" id="name" required aria-describedby="name-error" aria-invalid="false">
                             </div>
-                            <span class="error">성함을 입력해주세요.</span>
+                            <span class="error" id="name-error" role="alert" aria-live="polite">성함을 입력해주세요.</span>
                         </div>
                         <div class="item">
-                            <div class="form-tit">연락처</div>
+                            <label for="phone" class="form-tit">연락처 <span class="required" aria-label="필수 입력 항목">*</span></label>
                             <div class="form-cont">
-                                <input type="text" name="phone" id="phone">
+                                <input type="tel" name="phone" id="phone" required aria-describedby="phone-error" aria-invalid="false" placeholder="010-0000-0000">
                             </div>
-                            <span class="error">연락처를 입력해주세요.</span>
+                            <span class="error" id="phone-error" role="alert" aria-live="polite">연락처를 입력해주세요.</span>
                         </div>
                         <div class="item">
-                            <div class="form-tit">이메일</div>
+                            <label for="email" class="form-tit">이메일 <span class="required" aria-label="필수 입력 항목">*</span></label>
                             <div class="form-cont">
-                                <input type="text" name="email" id="email">
+                                <input type="email" name="email" id="email" required aria-describedby="email-error" aria-invalid="false" placeholder="example@email.com">
                             </div>
-                            <span class="error">잘못된 이메일 형식입니다.</span>
+                            <span class="error" id="email-error" role="alert" aria-live="polite">잘못된 이메일 형식입니다.</span>
                         </div>
                         <div class="item">
-                            <div class="form-tit">문의내용</div>
+                            <label for="message" class="form-tit">문의내용 <span class="required" aria-label="필수 입력 항목">*</span></label>
                             <div class="form-cont">
-                                <textarea name="message" id="message"></textarea>
+                                <textarea name="message" id="message" required aria-describedby="message-error" aria-invalid="false" placeholder="문의하실 내용을 입력해주세요."></textarea>
                             </div>
-                            <span class="error">내용을 입력해주세요.</span>
+                            <span class="error" id="message-error" role="alert" aria-live="polite">내용을 입력해주세요.</span>
                         </div>
                         <div class="btn-box">
                             <span class="area">
-                                <div class="btn-wrap">
+                                <button type="submit" class="btn-wrap" aria-label="문의하기 제출">
                                 <span>SUBMIT</span>
                                 <div class="hover">
-                                    <svg height="4vw" viewBox="0 0 83 84" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <svg height="4vw" viewBox="0 0 83 84" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                                         <path fill-rule="evenodd" clip-rule="evenodd" d="M76.3674 40.5L38.7661 3.06297L40.8828 0.937012L82.126 42L40.8828 83.063L38.7661 80.937L76.3674 43.5H0V40.5H76.3674Z" fill="#fff">                            
                                         </path>
                                     </svg>
                                 </div>
-                            </div>
+                            </button>
                             </span>
                         </div>
                     </div>
@@ -127,10 +151,10 @@
             </div>
         </section>
     </main>
-    <footer id="footer" class="footer">
+    <footer id="footer" class="footer" role="contentinfo">
         <div class="footer-inner">
             <div class="logo">
-                <img src="../assets/images/footer-logo.png" alt="logo">
+                <img src="../assets/images/footer-logo.png" alt="Flutter 로고">
             </div>
             <div class="tel">
                 <a href="tel:010-3468-3496">+82 10-3468-3496</a>
@@ -139,9 +163,10 @@
                 <a href="mailto:tmdxor0102@naver.com">tmdxor0102@naver.com</a>
             </div>
             <div class="git">
-                <a href="https://github.com/ost0102" target="_blank">GITHUB</a>
+                <a href="https://github.com/ost0102" target="_blank" rel="noopener noreferrer">GITHUB</a>
             </div>
         </div>
     </footer>
-    <a href="https://open.kakao.com/o/sbdpneLh" target="_blank" class="link-kakao">함께 하기</a>
+    <a href="https://open.kakao.com/o/sbdpneLh" target="_blank" rel="noopener noreferrer" class="link-kakao" aria-label="카카오톡 오픈채팅방으로 이동">함께 하기</a>
 </body>
+</html>

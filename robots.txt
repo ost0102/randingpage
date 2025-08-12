@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://ost0102.github.io/randingpage/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1 

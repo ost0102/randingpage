@@ -1275,5 +1275,39 @@ input, select, textarea {
   align-items: center;
   justify-content: center;
 }
+.required {
+  color: #ff0000;
+  font-weight: bold;
+}
+
+.error {
+  display: none;
+  color: #ff0000;
+  font-size: 14px;
+  margin-top: 8px;
+  font-family: "m-txt", sans-serif;
+}
+.error[role=alert] {
+  display: block;
+}
+
+button:focus,
+input:focus,
+textarea:focus,
+a:focus {
+  outline: 2px solid #007acc;
+  outline-offset: 2px;
+}
+
+button[aria-pressed=true] {
+  background-color: #007acc;
+  color: #fff;
+}
+
+input[aria-invalid=true],
+textarea[aria-invalid=true] {
+  border-color: #ff0000;
+  box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.2);
+}
 
 /*# sourceMappingURL=style.css.map */

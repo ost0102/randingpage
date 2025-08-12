@@ -1,13 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="Flutter">
-    <meta property="og:description" content="승택의 랜딩페이지">
+    
+    <!-- SEO 메타 태그 -->
+    <title>About Me - Flutter 웹 퍼블리셔 | 경력 및 기술 스택</title>
+    <meta name="description" content="웹 퍼블리셔 Flutter의 소개 페이지입니다. ASP.NET, PHP, MySQL, Oracle, Git, SVN, JIRA, Notion, Figma, Photoshop 등 다양한 기술 스택과 경력을 확인하세요.">
+    <meta name="keywords" content="웹 퍼블리셔, Flutter, ASP.NET, PHP, MySQL, Oracle, Git, SVN, JIRA, Notion, Figma, Photoshop, 웹 개발 경력">
+    <meta name="author" content="Flutter">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph 메타 태그 -->
+    <meta property="og:title" content="About Me - Flutter 웹 퍼블리셔">
+    <meta property="og:description" content="ASP.NET, PHP, MySQL, Oracle 등 다양한 기술 스택을 보유한 웹 퍼블리셔 Flutter의 경력과 소개">
     <meta property="og:image" content="https://ost0102.github.io/randingpage/assets/images/og-img.png">
-    <meta property="og:url" content="https://ost0102.github.io/randingpage/">
+    <meta property="og:url" content="https://ost0102.github.io/randingpage/page/about.html">
     <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Flutter Portfolio">
+    <meta property="og:locale" content="ko_KR">
+    
+    <!-- Twitter Card 메타 태그 -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="About Me - Flutter 웹 퍼블리셔">
+    <meta name="twitter:description" content="ASP.NET, PHP, MySQL, Oracle 등 다양한 기술 스택을 보유한 웹 퍼블리셔 Flutter의 경력과 소개">
+    <meta name="twitter:image" content="https://ost0102.github.io/randingpage/assets/images/og-img.png">
+    
+    <!-- 추가 SEO 메타 태그 -->
+    <meta name="theme-color" content="#000000">
+    <meta name="msapplication-TileColor" content="#000000">
+    <link rel="canonical" href="https://ost0102.github.io/randingpage/page/about.html">
+    
     <link rel="icon" href="../assets/images/favicon.ico">
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
@@ -38,35 +61,36 @@
     </script>
     <script src="../assets/js/common.js"></script>
     <script src="../assets/js/about.js" defer></script>
-    <title>Flutter</title>
 </head>
 <body>
-    <header class="header" id="header">
+    <header class="header" id="header" role="banner">
         <div class="header-inner">
             <h1 class="logo">
-                <a href="../index.html">Flutter</a>
+                <a href="../index.html" aria-label="Flutter 홈으로 이동">Flutter</a>
             </h1>
-            <ul class="nav">
-                <li>
-                    <a href="/page/about.html">ABOUT ME</a>
-                </li>
-                <li>
-                    <a href="/page/portfolio.html">PORTFOLIO</a>
-                </li>
-                <li>
-                    <a href="/page/contact.html">CONTACT</a>
-                </li>
-            </ul>
+            <nav class="nav" role="navigation" aria-label="주요 메뉴">
+                <ul class="nav">
+                    <li>
+                        <a href="/page/about.html" aria-current="page">ABOUT ME</a>
+                    </li>
+                    <li>
+                        <a href="/page/portfolio.html">PORTFOLIO</a>
+                    </li>
+                    <li>
+                        <a href="/page/contact.html">CONTACT</a>
+                    </li>
+                </ul>
+            </nav>
         </div>
     </header>
-    <main>
-        <section class="about-s1">
+    <main role="main">
+        <section class="about-s1" aria-label="소개">
             <div class="page-tit">
                 <h1>ABOUT ME</h1>
                 <p>페이지에 스토리를 입혀 사용자를 설레게하는 <strong>웹 퍼블리셔</strong></p>
             </div>
         </section>
-        <section class="about-s2">
+        <section class="about-s2" aria-label="소개 내용">
             <div class="sticky">                
                 <div class="about-s2-inner">
                     <div class="about-s2-tit">
@@ -74,7 +98,7 @@
                             FLUTTER
                             <p>
                                 PUBLISHER 
-                                <svg xmlns="http://www.w3.org/2000/svg"viewBox="0 0 24 24" fill="none">
+                                <svg xmlns="http://www.w3.org/2000/svg"viewBox="0 0 24 24" fill="none" aria-hidden="true">
                                     <path d="M3 12H9L12 5L14 18.5L17.5 12H215" class="heart" stroke-width="2"stroke-linecap="round"stroke-linejoin="round"/>
                                 </svg>
                             </p>
@@ -94,18 +118,18 @@
                 </div>
             </div>
         </section>
-        <section class="about-s3">
+        <section class="about-s3" aria-label="가치관">
             <div class="about-s3-inner">
                 <div class="about-s3-tit">
                     <h2>
                         <p>
                             <span>VALUE</span>
-                            <span class="img1"><img src="../assets/images/about/img1.png"></span>
+                            <span class="img1"><img src="../assets/images/about/img1.png" alt="가치 아이콘"></span>
                             <span>THE</span>
                         </p>
                         <p>
                             <span>USER'S</span>
-                            <span class="img2"><img src="../assets/images/about/img2.png"></span>
+                            <span class="img2"><img src="../assets/images/about/img2.png" alt="사용자 아이콘"></span>
                             <span>EXPERIENCE</span>
                         </p>
                     </h2>
@@ -119,7 +143,7 @@
                 </div>
             </div>
         </section>
-        <section class="about-s4">
+        <section class="about-s4" aria-label="왜 저인가">
             <div class="about-s4-inner">
                 <div class="about-s4-tit">
                     <h2>
@@ -134,7 +158,7 @@
                     <div class="sticky">
                         <div class="s4_tl"></div>
                         <div class="circle">
-                            <svg id="_레이어_2" data-name="레이어 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 760"> 
+                            <svg id="_레이어_2" data-name="레이어 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 760" aria-hidden="true"> 
                                 <defs> 
                                     <style>
                                         .cls-1 {
@@ -166,26 +190,26 @@
                                     수행한 프로젝트
                                 </p>
                                 <div class="img-txt2">
-                                    <span class="odometer01"></span>
+                                    <span class="odometer01" aria-label="프로젝트 수"></span>
                                     <span class="val">Qty</span>
                                     <strong class="plus">+</strong>
                                 </div>
                             </div>
                             <div class="circle-img to-left">
-                                <img src="../assets/images/about/img3.png">
+                                <img src="../assets/images/about/img3.png" alt="경험 아이콘">
                                 <div class="circle-img-txt">
                                     <p class="img-txt1">
                                         경험에 기여한 시간
                                     </p>
                                     <div class="img-txt2">
-                                        <span class="odometer02"></span>
+                                        <span class="odometer02" aria-label="경력 연차"></span>
                                         <span class="val">YEARS</span>
                                         <strong class="plus">+</strong>
                                     </div>
                                 </div>
                             </div>
                             <div class="circle-img to-right">
-                                <img src="../assets/images/about/img3.png">
+                                <img src="../assets/images/about/img3.png" alt="기술 아이콘">
                                 <div class="circle-img-txt">
                                     <p class="img-txt1">
                                         차별화된 기술
@@ -200,21 +224,21 @@
                 </div>
             </div>
         </section>
-        <section class="about-s5">
+        <section class="about-s5" aria-label="개성">
             <div class="about-s5-inner">
                 <div class="about-s5-tit" id="char">
-                    <div class="slide">A Distinctive personality <img src="../assets/images/about/img4.png"></div>   
-                    <div class="slide">A Distinctive personality <img src="../assets/images/about/img4.png"></div>
-                    <div class="slide">A Distinctive personality <img src="../assets/images/about/img4.png"></div>
-                    <div class="slide">A Distinctive personality <img src="../assets/images/about/img4.png"></div>
-                    <div class="slide">A Distinctive personality <img src="../assets/images/about/img4.png"></div>
-                    <div class="slide">A Distinctive personality <img src="../assets/images/about/img4.png"></div>
-                    <div class="slide">A Distinctive personality <img src="../assets/images/about/img4.png"></div>
+                    <div class="slide">A Distinctive personality <img src="../assets/images/about/img4.png" alt="개성 아이콘"></div>   
+                    <div class="slide">A Distinctive personality <img src="../assets/images/about/img4.png" alt="개성 아이콘"></div>
+                    <div class="slide">A Distinctive personality <img src="../assets/images/about/img4.png" alt="개성 아이콘"></div>
+                    <div class="slide">A Distinctive personality <img src="../assets/images/about/img4.png" alt="개성 아이콘"></div>
+                    <div class="slide">A Distinctive personality <img src="../assets/images/about/img4.png" alt="개성 아이콘"></div>
+                    <div class="slide">A Distinctive personality <img src="../assets/images/about/img4.png" alt="개성 아이콘"></div>
+                    <div class="slide">A Distinctive personality <img src="../assets/images/about/img4.png" alt="개성 아이콘"></div>
                 </div>
                 <div class="char-box">
                     <div class="char-box-inner">
                         <div class="img-box">
-                            <img src="../assets/images/about/img5.png" alt="">
+                            <img src="../assets/images/about/img5.png" alt="배움에 대한 도전정신을 나타내는 아이콘">
                         </div>
                         <div class="txt-box">
                             <div class="bg"></div>
@@ -226,7 +250,7 @@
                     </div>
                     <div class="char-box-inner">
                         <div class="img-box">
-                            <img src="../assets/images/about/img6.png" alt="">
+                            <img src="../assets/images/about/img6.png" alt="맡은 일에 대한 책임감을 나타내는 아이콘">
                         </div>
                         <div class="txt-box">
                             <div class="bg"></div>
@@ -238,7 +262,7 @@
                     </div>
                     <div class="char-box-inner">
                         <div class="img-box">
-                            <img src="../assets/images/about/img7.png" alt="">
+                            <img src="../assets/images/about/img7.png" alt="커뮤니케이션 및 협업을 나타내는 아이콘">
                         </div>
                         <div class="txt-box">
                             <div class="bg"></div>
@@ -250,7 +274,7 @@
                     </div>
                     <div class="char-box-inner">
                         <div class="img-box">
-                            <img src="../assets/images/about/img8.png" alt="">
+                            <img src="../assets/images/about/img8.png" alt="성과 평가 및 피드백을 나타내는 아이콘">
                         </div>
                         <div class="txt-box">
                             <div class="bg"></div>
@@ -262,13 +286,13 @@
                     </div>
                 </div>
         </section>
-        <section class="about-s6">
+        <section class="about-s6" aria-label="경력">
             <div class="sticky">
                 <div class="about-s6-inner">
                     <div class="about-s6-tit">
                         <h2>MY CAREER</h2>
                     </div>
-                    <div class="progress-bar">
+                    <div class="progress-bar" role="progressbar" aria-label="경력 진행률" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
                         <span class="progress-bar--inner"></span>
                     </div>
                     <div class="career-slide">
@@ -333,10 +357,10 @@
             </div>
         </section>
     </main>
-    <footer id="footer" class="footer">
+    <footer id="footer" class="footer" role="contentinfo">
         <div class="footer-inner">
             <div class="logo">
-                <img src="../assets/images/footer-logo.png" alt="logo">
+                <img src="../assets/images/footer-logo.png" alt="Flutter 로고">
             </div>
             <div class="tel">
                 <a href="tel:010-3468-3496">+82 10-3468-3496</a>
@@ -345,9 +369,10 @@
                 <a href="mailto:tmdxor0102@naver.com">tmdxor0102@naver.com</a>
             </div>
             <div class="git">
-                <a href="https://github.com/ost0102" target="_blank">GITHUB</a>
+                <a href="https://github.com/ost0102" target="_blank" rel="noopener noreferrer">GITHUB</a>
             </div>
         </div>
     </footer>
-    <a href="https://open.kakao.com/o/sbdpneLh" target="_blank" class="link-kakao">함께 하기</a>
+    <a href="https://open.kakao.com/o/sbdpneLh" target="_blank" rel="noopener noreferrer" class="link-kakao" aria-label="카카오톡 오픈채팅방으로 이동">함께 하기</a>
 </body>
+</html>

@@ -12,3 +12,45 @@
 @use './page/contact';
 
 @use './utils/mixin';
+
+// 접근성 스타일
+// 필수 입력 표시 스타일
+.required {
+    color: #ff0000;
+    font-weight: bold;
+}
+
+// 오류 메시지 스타일 개선
+.error {
+    display: none;
+    color: #ff0000;
+    font-size: 14px;
+    margin-top: 8px;
+    font-family: var.$Mft;
+    
+    &[role="alert"] {
+        display: block;
+    }
+}
+
+// 포커스 스타일 개선
+button:focus,
+input:focus,
+textarea:focus,
+a:focus {
+    outline: 2px solid #007acc;
+    outline-offset: 2px;
+}
+
+// 버튼 접근성 개선
+button[aria-pressed="true"] {
+    background-color: #007acc;
+    color: #fff;
+}
+
+// 폼 입력 필드 접근성
+input[aria-invalid="true"],
+textarea[aria-invalid="true"] {
+    border-color: #ff0000;
+    box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.2);
+}

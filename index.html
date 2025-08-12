@@ -1,13 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="Flutter">
-    <meta property="og:description" content="승택의 랜딩페이지">
+    
+    <!-- SEO 메타 태그 -->
+    <title>Flutter - 웹 퍼블리셔 포트폴리오 | HTML CSS JavaScript GSAP</title>
+    <meta name="description" content="웹 퍼블리셔 Flutter의 포트폴리오입니다. HTML, CSS, JavaScript, GSAP, Three.js를 활용한 인터랙티브 웹사이트 제작 경험을 확인하세요.">
+    <meta name="keywords" content="웹 퍼블리셔, 포트폴리오, HTML, CSS, JavaScript, GSAP, Three.js, 웹 개발, 프론트엔드, 인터랙티브 웹">
+    <meta name="author" content="Flutter">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph 메타 태그 -->
+    <meta property="og:title" content="Flutter - 웹 퍼블리셔 포트폴리오">
+    <meta property="og:description" content="HTML, CSS, JavaScript, GSAP를 활용한 인터랙티브 웹사이트 제작 포트폴리오">
     <meta property="og:image" content="https://ost0102.github.io/randingpage/assets/images/og-img.png">
     <meta property="og:url" content="https://ost0102.github.io/randingpage/">
     <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Flutter Portfolio">
+    <meta property="og:locale" content="ko_KR">
+    
+    <!-- Twitter Card 메타 태그 -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Flutter - 웹 퍼블리셔 포트폴리오">
+    <meta name="twitter:description" content="HTML, CSS, JavaScript, GSAP를 활용한 인터랙티브 웹사이트 제작 포트폴리오">
+    <meta name="twitter:image" content="https://ost0102.github.io/randingpage/assets/images/og-img.png">
+    
+    <!-- 추가 SEO 메타 태그 -->
+    <meta name="theme-color" content="#000000">
+    <meta name="msapplication-TileColor" content="#000000">
+    <link rel="canonical" href="https://ost0102.github.io/randingpage/">
+    
     <link rel="icon" href="./assets/images/favicon.ico">
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
@@ -36,29 +59,30 @@
     </script>
     <script src="./assets/js/common.js"></script>
     <script src="./assets/js/index.js" defer></script>
-    <title>Flutter</title>
 </head>
 <body>
-    <header class="header" id="header">
+    <header class="header" id="header" role="banner">
         <div class="header-inner">
             <h1 class="logo">
-                <a href="./index.html">Flutter</a>
+                <a href="./index.html" aria-label="Flutter 홈으로 이동">Flutter</a>
             </h1>
-            <ul class="nav">
-                <li>
-                    <a href="./page/about.html">ABOUT ME</a>
-                </li>
-                <li>
-                    <a href="./page/portfolio.html">PORTFOLIO</a>
-                </li>
-                <li>
-                    <a href="./page/contact.html">CONTACT</a>
-                </li>
-            </ul>
+            <nav class="nav" role="navigation" aria-label="주요 메뉴">
+                <ul class="nav">
+                    <li>
+                        <a href="./page/about.html">ABOUT ME</a>
+                    </li>
+                    <li>
+                        <a href="./page/portfolio.html">PORTFOLIO</a>
+                    </li>
+                    <li>
+                        <a href="./page/contact.html">CONTACT</a>
+                    </li>
+                </ul>
+            </nav>
         </div>
     </header>
-    <main>
-        <section class="s1">
+    <main role="main">
+        <section class="s1" aria-label="메인 비주얼">
             <div class="sticky">
                 <div class="s1-inner">
                     <div class="s1_top-tit">
@@ -66,6 +90,7 @@
                     </div>
                     <video id="video" loading="lazy" muted="" loop="" playsinline="" aria-label="메인 비디오 영상">
                         <source src="./assets/video/visual_video-pc.mp4" type="video/mp4">
+                        <p>비디오를 재생할 수 없습니다. 브라우저가 비디오 태그를 지원하지 않습니다.</p>
                     </video>
                     <div class="s1_bottom-tit">
                         <h2>website</h2>
@@ -78,19 +103,19 @@
                 </div>
             </div>
         </section>
-        <section class="s2">
+        <section class="s2" aria-label="소개">
             <div class="sticky">
                 <div class="s2-inner">
                     <div class="s2-tit">
                         <h2>WHO AM I</h2>
                         <p>
                             저는 사용자를 설레게
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                                 <path d="M3 12H9L12 5L14 18.5L17.5 12H21.5" class="heart" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                             <br>
                             만드는
-                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Uploaded to svgrepo.com" viewBox="0 0 32 32" xml:space="preserve" class="devlop">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Uploaded to svgrepo.com" viewBox="0 0 32 32" xml:space="preserve" class="devlop" aria-hidden="true">
                                 <path class="sharpcorners_een" d="M20,28h2v1H10v-1h2l1-3h6L20,28z M31,3v21H1V3H31z M29,5H3v17h26V5z M28,21H4V6h24V21z M7,10h8V9  H7V10z M11,17H7v1h4V17z M19,15h-9v1h9V15z M19,13h-9v1h9V13z M20,11H10v1h10V11z"/>
                             </svg>
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;퍼블리셔 입니다.
@@ -108,21 +133,21 @@
                                     사용자에게 플러팅, 끌리는 웹사이트를 만들고 있습니다.
                                 </p>
                             </div>
-                            <img src="./assets/images/s2_img.jpg" alt="">
+                            <img src="./assets/images/s2_img.jpg" alt="웹 퍼블리싱 작업 중인 모습">
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="s3">
+        <section class="s3" aria-label="성과">
             <div class="s3-tit sticky">
                 <h2 class="s3_top-tit">FLUTTER</h2>
                 <h2 class="s3_bottom-tit">PERFORMANCE</h2>
             </div>
-            <ul class="project-list">
+            <ul class="project-list" role="list">
                 <li>
-                    <a href="https://ost0102.github.io/NAVER/"target="_blank">
-                        <img src="./assets/images/naver.png"alt="포트폴리오네이버">
+                    <a href="https://ost0102.github.io/NAVER/" target="_blank" rel="noopener noreferrer">
+                        <img src="./assets/images/naver.png" alt="네이버 클론 프로젝트">
                         <div class="txt-box">
                             <p>네이버</p>
                             <p>[HTML CSS CLONE 1DAY]</p>
@@ -130,8 +155,8 @@
                     </a>
                 </li>
                 <li>
-                    <a href="https://ost0102.github.io/enterprise"target="_blank">
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 120 120" style="enable-background:new 0 0 120 120;" xml:space="preserve">
+                    <a href="https://ost0102.github.io/enterprise" target="_blank" rel="noopener noreferrer">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 120 120" style="enable-background:new 0 0 120 120;" xml:space="preserve" aria-hidden="true">
                             <g>
                                 <path d="M0,23.14h23.14V0H0V23.14z M7.69,3.64h8.29v1.83H9.63v4.73h6.13v1.83H9.63v4.84h6.56v1.83h-8.5V3.64z"/>
                                 <path d="M24.22,23.14h23.14V0H24.22V23.14z M30.76,3.64h1.94l5.4,9.9c0.32,0.58,0.77,1.57,0.77,1.57s-0.04-1.03-0.04-1.57v-9.9   h1.94V18.7h-1.94l-5.4-9.9c-0.32-0.58-0.77-1.57-0.77-1.57S32.7,8.26,32.7,8.8v9.9h-1.94V3.64z"/>
@@ -174,8 +199,8 @@
                     </a>
                 </li>
                 <li>
-                    <a href="https://ost0102.github.io/scoutmotors"target="_blank">
-                        <img src="./assets/images/scout.webp"alt="포트폴리오 스카우트모터스">
+                    <a href="https://ost0102.github.io/scoutmotors" target="_blank" rel="noopener noreferrer">
+                        <img src="./assets/images/scout.webp" alt="스카우트모터스 클론 프로젝트">
                         <div class="txt-box">
                             <p>스카우트모터스</p>
                             <p>[HTML CSS JQUERY GSAP CLONE 10DAYS]</p>
@@ -183,8 +208,8 @@
                     </a>
                 </li>
                 <li>
-                    <a href="https://ost0102.github.io/chirsndave/"target="_blank">
-                        <img src="./assets/images/chris.jpg" alt="포트폴리오크리스앤데이브">
+                    <a href="https://ost0102.github.io/chirsndave/" target="_blank" rel="noopener noreferrer">
+                        <img src="./assets/images/chris.jpg" alt="크리스앤데이브 클론 프로젝트">
                         <div class="txt-box">
                             <p>크리스앤데이브</p>
                             <p>[HTML CSS JQUERY GSAP CLONE 5DAYS]</p>
@@ -192,8 +217,8 @@
                     </a>
                 </li>
                 <li>
-                    <a href="https://ost0102.github.io/wacus/"target="_blank">
-                        <img src="./assets/images/wacus.png" alt="포트폴리오와커스">
+                    <a href="https://ost0102.github.io/wacus/" target="_blank" rel="noopener noreferrer">
+                        <img src="./assets/images/wacus.png" alt="와커스 클론 프로젝트">
                         <div class="txt-box">
                             <p>와커스</p>
                             <p>[HTML CSS JavaScript GSAP Three.js DrawSVG 4DAYS]</p>
@@ -201,8 +226,8 @@
                     </a>
                 </li>
                 <li>
-                    <a href="https://ost0102.github.io/portfolio/"target="_blank">
-                        <img src="./assets/images/portfolio1.jpg"alt="포트폴리오 랜딩페이지1">
+                    <a href="https://ost0102.github.io/portfolio/" target="_blank" rel="noopener noreferrer">
+                        <img src="./assets/images/portfolio1.jpg" alt="랜딩페이지1 프로젝트">
                         <div class="txt-box">
                             <p>랜딩페이지1</p>
                             <p>[HTML CSS JQUERY GSAP 3DAYS]</p>
@@ -210,8 +235,8 @@
                     </a>
                 </li>
                 <li>
-                    <a href="https://ost0102.github.io/portfolio2/"target="_blank">
-                        <img src="./assets/images/portfolio2.png"alt="포트폴리오 랜딩페이지2">
+                    <a href="https://ost0102.github.io/portfolio2/" target="_blank" rel="noopener noreferrer">
+                        <img src="./assets/images/portfolio2.png" alt="랜딩페이지2 프로젝트">
                         <div class="txt-box">
                             <p>랜딩페이지2</p>
                             <p>[HTML CSS JavaScript GSAP Fullpage 5DAYS]</p>
@@ -219,8 +244,8 @@
                     </a>
                 </li>
                 <li>
-                    <a href="https://gwon.net/" target="_blank">
-                        <img src="./assets/images/gwon.png" alt="포트폴리오지원">
+                    <a href="https://gwon.net/" target="_blank" rel="noopener noreferrer">
+                        <img src="./assets/images/gwon.png" alt="GWON 프로젝트">
                         <div class="txt-box">
                             <p>GWON</p>
                             <p>[HTML CSS JQUERY PHP CODEIGNITER JSON SQL]</p>
@@ -228,8 +253,8 @@
                     </a>
                 </li>
                 <li>
-                    <a href="http://www.yeonsuda.com/" target="_blank">
-                        <img src="./assets/images/yeonsuda.png"alt="포트폴리오 연수다">
+                    <a href="http://www.yeonsuda.com/" target="_blank" rel="noopener noreferrer">
+                        <img src="./assets/images/yeonsuda.png" alt="연수다 프로젝트">
                         <div class="txt-box">
                             <p>연수다</p>
                             <p>[HTML CSS JQUERY ASP.NET SQL LEAFLET SLICK]</p>
@@ -238,8 +263,8 @@
                     </a>
                 </li>
                 <li>
-                    <a href="http://meta.yjit.co.kr/" target="_blank">
-                        <img src="./assets/images/rnd.png" alt="포트폴리오 RD 프로젝트">
+                    <a href="http://meta.yjit.co.kr/" target="_blank" rel="noopener noreferrer">
+                        <img src="./assets/images/rnd.png" alt="R&D 프로젝트">
                         <div class="txt-box">
                             <p>R&D</p>
                             <p>[HTML CSS JQUERY JSON SQL LEAFLET DATETIMEPICKER CHART]</p>
@@ -253,7 +278,7 @@
                     <a href="/page/portfolio.html">
                     <span>MORE PORTFOLIO</span>
                     <div class="hover">
-                        <svg height="4vw" viewBox="0 0 83 84" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg height="4vw" viewBox="0 0 83 84" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M76.3674 40.5L38.7661 3.06297L40.8828 0.937012L82.126 42L40.8828 83.063L38.7661 80.937L76.3674 43.5H0V40.5H76.3674Z" fill="#fff">                            
                             </path>
                         </svg>
@@ -265,7 +290,7 @@
                 <span>VIEW</span>
             </div>
         </section>
-        <section class="s4">
+        <section class="s4" aria-label="기술 스택">
             <div class="s4-inner">
                 <div class="s4-left">
                     <div class="s4-left-inner sticky">
@@ -282,12 +307,12 @@
                                 <div class="item">PHP·SQL·C#·ASP.NET</div>
                                 <div class="item">ETC</div>
                             </div>
-                            <canvas id="helper" width="899" height="364"></canvas>
+                            <canvas id="helper" width="899" height="364" aria-label="기술 스택 시각화"></canvas>
                         </div>
                     </div>
                 </div>
                 <div class="s4-right">
-                    <ul class="sect-list">
+                    <ul class="sect-list" role="list">
                         <li>
                             <div class="txt-box">
                                 <p>PUBLISHING</p>
@@ -338,7 +363,7 @@
                 </div>
             </div>
         </section>
-        <section class="s5">
+        <section class="s5" aria-label="기술 목록">
             <div class="skill swiper" id="skill1">
                 <div class="line swiper-wrapper">
                     <div class="line-item swiper-slide">HTML</div>
@@ -371,7 +396,7 @@
                 </div>
             </div>
         </section>
-        <section class="s6">
+        <section class="s6" aria-label="연락처">
             <div class="sticky">
                 <div class="s6-inner">
                     <div class="s6-tit">
@@ -381,7 +406,7 @@
                         <a href="/page/contact.html">
                             <div class="sticker-img">
                                 <div class="visible">
-                                <div class="cont-wrap"><img src="./assets/images/sticker.png" alt=""></div>
+                                <div class="cont-wrap"><img src="./assets/images/sticker.png" alt="연락처 스티커"></div>
                                 </div>
                             </div>
                             <div class="sticker-front">
@@ -396,10 +421,10 @@
             </div>
         </section>
     </main>
-    <footer id="footer" class="footer">
+    <footer id="footer" class="footer" role="contentinfo">
         <div class="footer-inner">
             <div class="logo">
-                <img src="./assets/images/footer-logo.png" alt="logo">
+                <img src="./assets/images/footer-logo.png" alt="Flutter 로고">
             </div>
             <div class="tel">
                 <a href="tel:010-3468-3496">+82 10-3468-3496</a>
@@ -408,10 +433,10 @@
                 <a href="mailto:tmdxor0102@naver.com">tmdxor0102@naver.com</a>
             </div>
             <div class="git">
-                <a href="https://github.com/ost0102" target="_blank">GITHUB</a>
+                <a href="https://github.com/ost0102" target="_blank" rel="noopener noreferrer">GITHUB</a>
             </div>
         </div>
     </footer>
-    <a href="https://open.kakao.com/o/sbdpneLh" target="_blank" class="link-kakao">함께 하기</a>
+    <a href="https://open.kakao.com/o/sbdpneLh" target="_blank" rel="noopener noreferrer" class="link-kakao" aria-label="카카오톡 오픈채팅방으로 이동">함께 하기</a>
 </body>
 </html>
