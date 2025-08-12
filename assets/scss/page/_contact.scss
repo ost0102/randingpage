@@ -1,0 +1,108 @@
+@use '../base/var';
+
+.contact-s1{
+    height: 100vh;
+}
+.contact-s2{
+    padding: 0 200px;
+    .contact-inner{
+        .form-area{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            .item{
+                &:not(:nth-child(5)){
+                    max-width: calc(50% - 15px);
+                    width: 100%;
+                }
+                &:nth-child(5){
+                    max-width: 100%;
+                    width: 100%;
+                }
+                .form-tit{
+                    font-size: 25px;
+                    font-weight: 500;
+                    font-family: var.$Lft;
+                }
+                .form-cont{
+                    input{
+                        width: 100%;
+                        height: 50px;
+                        border-top: none;
+                        border-left: none;
+                        border-right: none;
+                        border-bottom: 1px solid #111;
+                    }
+                    textarea{
+                        appearance: none;
+                        border: none;
+                        border-radius: 0;
+                        font-size: inherit;
+                        width: 100%;
+                        height: 150px;
+                        border-bottom: 1px solid #000;
+                        resize: none;
+                        padding: 12px 0;
+                    }
+                }
+                .error{
+                    display: none;
+                    color: #ff0000;
+                    font-size: 14px;
+                    margin-top: 8px;
+                    font-family: var.$Mft;
+                }
+            }
+            .btn-box{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                z-index: 10;
+                .area{
+                    .btn-wrap{
+                        display: flex;
+                        position: relative;
+                        width: 250px;
+                        height: 250px;
+                        border-radius: 50%;
+                        border: 1px solid #111;
+                        align-items: center;
+                        justify-content: center;
+                        font-family: var.$Mft;
+                        font-weight: 500;
+                        font-size: 26px;
+                        line-height: 0.9;
+                        text-align: center;
+                        cursor: pointer;
+                        &:hover{
+                            .hover{
+                                clip-path: circle(50% at 50% 50%);
+                            }
+                        }
+                    }
+                    span{
+            
+                    }
+                    .hover{
+                        width: 100%;
+                        height: 100%;
+                        background: #000;
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        border-radius: 50%;
+                        clip-path: circle(0% at 50% 50%);
+                        transition: clip-path 0.3s;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        svg{
+            
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

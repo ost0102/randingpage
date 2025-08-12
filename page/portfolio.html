@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Flutter">
+    <meta property="og:description" content="승택의 랜딩페이지">
+    <meta property="og:image" content="https://ost0102.github.io/randingpage/assets/images/og-img.png">
+    <meta property="og:url" content="https://ost0102.github.io/randingpage/">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="../assets/images/favicon.ico">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://github.hubspot.com/odometer/themes/odometer-theme-default.css">
+    
+    <!-- GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/TextPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.8/odometer.min.js"></script>
+
+    <!-- SplitType CDN -->
+    <script src="https://unpkg.com/split-type"></script>
+    
+    <!-- Swiper CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
+    <!-- Lenis CDN -->
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script> 
+    
+    <!-- Matter.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.20.0/matter.min.js"></script>
+    <script>
+        // 브라우저의 스크롤 복원 기능 비활성화
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+    </script>
+    <script src="../assets/js/common.js"></script>
+    <script src="../assets/js/portfolio.js" defer></script>
+    <title>Flutter</title>
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="header-inner">
+            <h1 class="logo">
+                <a href="/">Flutter</a>
+            </h1>
+            <ul class="nav">
+                <li>
+                    <a href="/page/about.html">ABOUT ME</a>
+                </li>
+                <li>
+                    <a href="/page/portfolio.html">PORTFOLIO</a>
+                </li>
+                <li>
+                    <a href="/page/contact.html">CONTACT</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <section class="portfolio-s1">
+            <div class="page-tit">
+                <h1>PORTFOLIO</h1>
+                <p>스토리가 담긴 웹! <strong>사용자 경험</strong>이 담긴 페이지를 제작합니다.</p>
+            </div>
+        </section>
+        <section class="portfolio-s2">
+            <div class="portfolio-s2-inner">
+                <ul class="sort-list">
+                    <li>
+                        <button type="button" class="select" data-filter="all">ALL</button>
+                    </li>
+                    <li>
+                        <button type="button" data-filter="html-css-js">HTML/CSS/JavaScript</button>
+                    </li>
+                    <li>
+                        <button type="button" data-filter="php">PHP(CodeIgniter)</button>
+                    </li>
+                    <li>
+                        <button type="button" data-filter="csharp">C#(ASP.NET)</button>
+                    </li>
+                </ul>
+                <ul class="portfolio-list">
+                    <li class="portfolio-item" data-category="html-css-js">
+                        <a href="https://ost0102.github.io/portfolio2/" target="_blank">
+                            <p>Portfolio2</p>
+                            <span>HTML/CSS/JavaScript/GSAP/fullpage.js</span>
+                            <div class="thumb">
+                                <img src="../assets/images/portfolio2.png" alt="Portfolio2">
+                            </div>
+                        </a>
+                        <div class="git">
+                            <a href="https://github.com/ost0102/portfolio2" target="_blank">
+                                <img src="../assets/images/portfolio/git.png" alt="git">
+                            </a>
+                        </div>
+                    </li>
+                    <li class="portfolio-item" data-category="html-css-js">
+                        <a href="https://ost0102.github.io/portfolio/" target="_blank">
+                            <p>Portfolio</p>
+                            <span>HTML/CSS/JavaScript/GSAP</span>
+                            <div class="thumb">
+                                <img src="../assets/images/portfolio/img1.png" alt="Portfoli1">
+                            </div>
+                        </a>
+                        <div class="git">
+                            <a href="https://github.com/ost0102/portfolio" target="_blank">
+                                <img src="../assets/images/portfolio/git.png" alt="git">
+                            </a>
+                        </div>
+                    </li>
+                    <li class="portfolio-item" data-category="html-css-js">
+                        <a href="https://ost0102.github.io/wacus/" target="_blank">
+                            <p>Wacus</p>
+                            <span>HTML/CSS/JavaScript/GSAP/Three.js</span>
+                            <div class="thumb">
+                                <img src="../assets/images/wacus.png" alt="Wacus">
+                            </div>
+                        </a>
+                        <div class="git">
+                            <a href="https://github.com/ost0102/wacus" target="_blank">
+                                <img src="../assets/images/portfolio/git.png" alt="git">
+                            </a>
+                        </div>
+                    </li>
+                    <li class="portfolio-item" data-category="html-css-js">
+                        <a href="https://ost0102.github.io/chirsndave/" target="_blank">
+                            <p>Chrisndave</p>
+                            <span>HTML/CSS/JavaScript/GSAP/</span>
+                            <div class="thumb">
+                                <img src="../assets/images/chris.jpg" alt="Chrisndave">
+                            </div>
+                        </a>
+                        <div class="git">
+                            <a href="https://github.com/ost0102/chirsndave" target="_blank">
+                                <img src="../assets/images/portfolio/git.png" alt="git">
+                            </a>
+                        </div>
+                    </li>
+                    <li class="portfolio-item" data-category="html-css-js">
+                        <a href="https://ost0102.github.io/enterprise/" target="_blank">
+                            <p>Enterprise</p>
+                            <span>HTML/CSS/JavaScript/GSAP</span>
+                            <div class="thumb">
+                                <img src="../assets/images/enter.svg" alt="Enterprise">
+                            </div>
+                        </a>
+                        <div class="git">
+                            <a href="https://github.com/ost0102/enterprise" target="_blank">
+                                <img src="../assets/images/portfolio/git.png" alt="git">
+                            </a>
+                        </div>
+                    </li>
+                    <li class="portfolio-item" data-category="html-css-js">
+                        <a href="https://ost0102.github.io/scoutmotors/" target="_blank">
+                            <p>Scoutmotors</p>
+                            <span>HTML/CSS/JavaScript/GSAP/jQuery/Swiper.js</span>
+                            <div class="thumb">
+                                <img src="../assets/images/scout.webp" alt="Scoutmotors">
+                            </div>
+                        </a>
+                        <div class="git">
+                            <a href="https://github.com/ost0102/scoutmotors" target="_blank">
+                                <img src="../assets/images/portfolio/git.png" alt="git">
+                            </a>
+                        </div>
+                    </li>
+                    <li class="portfolio-item" data-category="html-css-js">
+                        <a href="https://ost0102.github.io/NAVER/" target="_blank">
+                            <p>Naver</p>
+                            <span>HTML/CSS</span>
+                            <div class="thumb">
+                                <img src="../assets/images/naver.png" alt="Naver">
+                            </div>
+                        </a>
+                        <div class="git">
+                            <a href="https://github.com/ost0102/NAVER" target="_blank">
+                                <img src="../assets/images/portfolio/git.png" alt="git">
+                            </a>
+                        </div>
+                    </li>
+                    <li class="portfolio-item" data-category="etc">
+                        <a href="https://tmdxor0102.cafe24.com/skin-skin1" target="_blank">
+                            <p>Cafe24</p>
+                            <span>ETC</span>
+                            <div class="thumb">
+                                <img src="../assets/images/cafe24.jpg" alt="Cafe24">
+                            </div>
+                        </a>                        
+                    </li>
+                    <li class="portfolio-item" data-category="csharp">
+                        <a href="https://github.com/ost0102/CRM_ASP.NET" target="_blank">
+                            <div class="left">
+                                <p>CRM</p>
+                                <span>C#/ASP.NET/SQL</span>
+                            </div>
+                            <div class="right">
+                                <img src="../assets/images/portfolio/git.png" alt="">
+                            </div>
+                        </a>
+                    </li>
+                    <li class="portfolio-item" data-category="csharp">
+                        <a href="http://cs.faircon.co.kr/" target="_blank">
+                            <p>Faircon</p>
+                            <span>C#/ASP.NET/SQL</span>
+                            <div class="thumb">
+                                <img src="../assets/images/portfolio/img2.png" alt="Faircon">
+                            </div>
+                        </a>
+                        <div class="git">
+                            <a href="https://github.com/ost0102/Faircon_C-Sharp" target="_blank">
+                                <img src="../assets/images/portfolio/git.png" alt="git">
+                            </a>
+                        </div>
+                    </li>
+                    <li class="portfolio-item" data-category="csharp">
+                        <a href="http://m.elvisexp.co.kr/" target="_blank">
+                            <p>Express Mobile</p>
+                            <span>C#/ASP.NET/SQL</span>
+                            <div class="thumb">
+                                <img src="../assets/images/portfolio/img3.png" alt="Express Mobile">
+                            </div>
+                        </a>
+                        <div class="git">
+                            <a href="https://github.com/ost0102/EXPRESS-Mobile_C-Sharp" target="_blank">
+                                <img src="../assets/images/portfolio/git.png" alt="git">
+                            </a>
+                        </div>
+                    </li>
+                    <li class="portfolio-item" data-category="csharp">
+                        <a href="http://elvisexp.co.kr/" target="_blank">
+                            <p>Express Web</p>
+                            <span>C#/ASP.NET/SQL</span>
+                            <div class="thumb">
+                                <img src="../assets/images/portfolio/img4.png" alt="Express Web">
+                            </div>
+                        </a>
+                        <div class="git">
+                            <a href="https://github.com/ost0102/EXPRESS-WEB_C-Sharp" target="_blank">
+                                <img src="../assets/images/portfolio/git.png" alt="git">
+                            </a>
+                        </div>
+                    </li>
+                    <li class="portfolio-item" data-category="csharp">
+                        <a href="http://meta.yjit.co.kr/" target="_blank">
+                            <p>META(R&D)</p>
+                            <span>C#/ASP.NET/SQL(webdev@yjit.co.kr/yjit12#$)</span>
+                            <div class="thumb">
+                                <img src="../assets/images/portfolio/img5.png" alt="META(R&D)">
+                            </div>
+                        </a>
+                        <div class="git">
+                            <a href="https://github.com/ost0102/META-_C-Sharp" target="_blank">
+                                <img src="../assets/images/portfolio/git.png" alt="git">
+                            </a>
+                        </div>
+                    </li>
+                    <li class="portfolio-item" data-category="csharp">
+                        <a href="https://www.elvisbill.com/" target="_blank">
+                            <p>ELVIS bill</p>
+                            <span>C#/ASP.NET/SQL</span>
+                            <div class="thumb">
+                                <img src="../assets/images/portfolio/img6.png" alt="ELVIS bill">
+                            </div>
+                        </a>
+                        <div class="git">
+                            <a href="https://github.com/ost0102/Bill_C-Sharp" target="_blank">
+                                <img src="../assets/images/portfolio/git.png" alt="git">
+                            </a>
+                        </div>
+                    </li>
+                    <li class="portfolio-item" data-category="csharp">
+                        <a href="http://www.h2logistics.co.kr/" target="_blank">
+                            <p>H2 logistics</p>
+                            <span>C#/ASP.NET/SQL</span>
+                            <div class="thumb">
+                                <img src="../assets/images/portfolio/img7.jpg" alt="H2 logistics">
+                            </div>
+                        </a>
+                        <div class="git">
+                            <a href="https://github.com/ost0102/H2Logis_C-Sharp" target="_blank">
+                                <img src="../assets/images/portfolio/git.png" alt="git">
+                            </a>
+                        </div>
+                    </li>
+                    <li class="portfolio-item" data-category="csharp">
+                        <a href="http://www.tlac.co.kr/" target="_blank">
+                            <p>Taehwa</p>
+                            <span>C#/ASP.NET/SQL</span>
+                            <div class="thumb">
+                                <img src="../assets/images/portfolio/img8.png" alt="Taehwa">
+                            </div>
+                        </a>
+                        <div class="git">
+                            <a href="https://github.com/ost0102/Taehwa_C-Sharp" target="_blank">
+                                <img src="../assets/images/portfolio/git.png" alt="git">
+                            </a>
+                        </div>
+                    </li>
+                    <li class="portfolio-item" data-category="csharp">
+                        <a href="http://www.mygng.kr/" target="_blank">
+                            <p>GNG</p>
+                            <span>C#/ASP.NET/SQL</span>
+                            <div class="thumb">
+                                <img src="../assets/images/portfolio/img9.png" alt="GNG">
+                            </div>
+                        </a>
+                        <div class="git">
+                            <a href="https://github.com/ost0102/GNG_C-Sharp" target="_blank">
+                                <img src="../assets/images/portfolio/git.png" alt="git">
+                            </a>
+                        </div>
+                    </li>
+                    <li class="portfolio-item" data-category="csharp">
+                        <a href="http://www.yeonsuda.com/" target="_blank">
+                            <p>Yeonsuda</p>
+                            <span>C#/ASP.NET/SQL(webdev@yjit.co.kr/yjit12#$)</span>
+                            <div class="thumb">
+                                <img src="../assets/images/portfolio/img10.png" alt="Yeonsuda">
+                            </div>
+                        </a>
+                        <div class="git">
+                            <a href="https://github.com/ost0102/workshop_C-Sharp" target="_blank">
+                                <img src="../assets/images/portfolio/git.png" alt="git">
+                            </a>
+                        </div>
+                    </li>
+                    <li class="portfolio-item" data-category="csharp">
+                        <a href="http://help.yjit.co.kr/" target="_blank">
+                            <p>Online regist</p>
+                            <span>C#/ASP.NET/SQL</span>
+                            <div class="thumb">
+                                <img src="../assets/images/portfolio/img11.png" alt="Online regist">
+                            </div>
+                        </a>
+                        <div class="git">
+                            <a href="https://github.com/ost0102/online-regist_C-Sharp" target="_blank">
+                                <img src="../assets/images/portfolio/git.png" alt="git">
+                            </a>
+                        </div>
+                    </li>
+                    <li class="portfolio-item" data-category="php">
+                        <a href="https://gwon.net/" target="_blank">
+                            <p>GWON</p>
+                            <span>PHP</span>
+                            <div class="thumb">
+                                <img src="../assets/images/gwon.png" alt="GWON">
+                            </div>
+                        </a>
+                        <div class="git">
+                            <a href="https://github.com/ost0102/gwon_beta_web-PHP-" target="_blank">
+                                <img src="../assets/images/portfolio/git.png" alt="git">
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <footer id="footer" class="footer">
+        <div class="footer-inner">
+            <div class="logo">
+                <img src="../assets/images/footer-logo.png" alt="logo">
+            </div>
+            <div class="tel">
+                <a href="tel:010-3468-3496">+82 10-3468-3496</a>
+            </div>
+            <div class="mail">
+                <a href="mailto:tmdxor0102@naver.com">tmdxor0102@naver.com</a>
+            </div>
+            <div class="git">
+                <a href="https://github.com/ost0102" target="_blank">GITHUB</a>
+            </div>
+        </div>
+    </footer>
+    <a href="https://open.kakao.com/o/sbdpneLh" target="_blank" class="link-kakao">함께 하기</a>
+</body>

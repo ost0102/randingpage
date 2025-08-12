@@ -1,0 +1,118 @@
+@use '../base/var';
+.portfolio-s1{
+    height: 100vh;
+}
+.portfolio-s2{
+    &-inner{
+        .sort-list{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            li{
+                button{
+                    font-size: 20px;
+                    font-weight: 400;
+                    color: #000;
+                    border: 1px solid #000;
+                    border-radius: 30px;
+                    background: #fff;
+                    padding: 5px 20px;
+                    &.select{
+                        background: #000;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+        .portfolio-list{
+            padding: 120px 20px;
+            .portfolio-item{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                position: relative;
+                min-height: 170px;
+                border-bottom: 1px solid #D7D7D7;
+                padding: 0 20px;
+                transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+                opacity: 1;
+                transform: translateY(0);
+                &:nth-child(1){
+                    border-top: 1px solid #D7D7D7;
+                }
+                &:nth-child(9){
+                    a{
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        width: 100%;
+                        .left{
+
+                        }
+                        img{
+                            width: 90px;
+                        }
+                    }
+                }
+                &:nth-child(11),
+                &:nth-child(12),
+                &:nth-child(13),
+                &:nth-child(19){
+                    > a{
+                        img{
+                            object-fit: contain !important;
+                            background: var.$Mcl;
+                        }
+                    }
+                }
+                > a{
+                    width: 90%;
+                    &:hover{
+                        .thumb{
+                            opacity: 1;
+                        }
+                    }
+                    p{
+                        font-size: 40px;
+                        font-family: var.$Lft;
+                        color: #000;
+                        font-weight: 500;
+                    }
+                    span{
+                        font-size: 16px;
+                        font-weight: 400;
+                        color: #000;
+                        font-family: var.$Lft;
+                    }
+                    .thumb{
+                        position: absolute;
+                        width: 380px;
+                        height: 500px;
+                        right: 10%;
+                        top: 50%;
+                        transform: translateY(-40%);
+                        opacity: 0;
+                        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+                        z-index: 1;
+                        pointer-events: none;
+                        img{
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                            border-radius: 10px;
+                        }
+                    }
+                }
+                .git{
+                    width: 90px;
+                    a{
+                        img{
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

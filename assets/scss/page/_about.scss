@@ -108,7 +108,7 @@
             height: 600vh;
             transition: background 0.5s ease-in-out;
             &.active{
-                background: var.$Mcl;
+                background: #ffa6a6;
             }
             .circle{
                 max-width: 33vw;
@@ -145,13 +145,13 @@
                     .circle-txt3{
                         line-height: 1.7;
                         font-size: 18px;
-                        color: #ccc;
+                        color: #fff;
                         font-weight: 400;
                     }
                     .circle-txt4{
                         line-height: 1.7;
                         font-size: 18px;
-                        color: #00D0FF;
+                        color: var.$Mcl;
                         font-weight: 700;
                     }
                     .ct{
@@ -232,6 +232,166 @@
                         span{
 
                         }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.about-s5{
+    overflow: hidden;
+    &-inner{
+        .about-s5-tit{
+            display: flex;
+            align-items: center;
+            .slide{
+                display: flex;
+                align-items: center;
+                flex-shrink: 0;
+                font-size: 120px;
+                font-family: var.$Lft;
+                font-weight: 700;
+                text-transform: uppercase;
+                white-space: nowrap;
+            }
+        }
+        .char-box{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 0 20px;
+            .char-box-inner{
+                position: relative;
+                width: 100%;
+                aspect-ratio: 1 / 1;
+                overflow: hidden;
+                border-radius: 10px;
+                &:hover{
+                    .txt-box{
+                        .bg{
+                            clip-path: circle(50% at 50% 50%);
+                        }
+                        .txt{
+                            opacity: 1;
+                        }
+                    }
+                }
+                &:nth-child(1){
+                    .bg{
+                        background-color: #FFD905;
+                    }
+                }
+                &:nth-child(2){
+                    .bg{
+                        background: #5546FF;
+                    }
+                }
+                &:nth-child(3){
+                    .bg{
+                        background: var.$Mcl;
+                    }
+                }
+                &:nth-child(4){
+                    .bg{
+                        background: #93FF7E;
+                    }
+                }
+                .img-box{
+                    width: 100%;
+                    height: 100%;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+                .txt-box{
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    font-size: 24px;
+                    font-weight: 700;
+                    width: 100%;
+                    height: 100%;
+                    .bg{
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        width: 200%;
+                        padding-top: 200%;
+                        border-radius: 50%;
+                        transform: translate(-50%, -50%);
+                        clip-path: circle(0% at 50% 50%);
+                        transition: clip-path 0.6s;
+                    }
+                    .txt{
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        font-weight: 600;
+                        font-size: 32px;
+                        line-height: 1.3;
+                        text-align: center;
+                        transition: 0.5s 0.2s;
+                        opacity: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.about-s6{
+    height: 600vh;
+    &-inner{
+        position: relative;
+        padding: 0 20px;
+        height: 100%;
+        .about-s6-tit{
+            position: absolute;
+            top: 15%;
+            h2{
+                font-family: var.$Lft;
+                font-size: 180px;
+                font-weight: 700;
+            }
+        }
+        .progress-bar{
+            position: absolute;
+            top: 45%;
+            left: 20px;
+            right: 20px;
+            height: 5px;
+            background: #d9d9d9;
+            .progress-bar--inner{
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                background: #000;
+            }
+        }
+        .career-slide{
+            position: absolute;
+            top: 45%;
+            left: 20px;
+            .career-box{
+                display: flex;
+                gap: 200px;
+                &--inner{
+                    flex-shrink: 0;
+                    .year{
+                        font-size: 96px;
+                        font-weight: 700;
+                        font-family: var.$Lft;
+                    }
+                    .txt{
+                        font-size: 28px;
+                        font-weight: 400;
+                        font-family: var.$Mft;
                     }
                 }
             }

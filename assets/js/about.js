@@ -177,3 +177,30 @@ circleTl3
             }
         }
     })
+
+gsap.to('.about-s5-tit',{
+    xPercent: -100,       
+    duration: 12,          
+    ease: "none",          
+    repeat: -1,   
+})
+
+const careerTl = gsap.timeline({
+    scrollTrigger: {
+        trigger: ".about-s6",
+        start: "top top",
+        end: "bottom bottom",
+        scrub: 1,
+    }
+});
+careerTl
+    .to('.progress-bar--inner', {
+        width: '100%',
+        duration: 1,
+        ease: "power2.out"
+    },'a')
+    .to('.career-box',{
+        xPercent:-100,
+        duration: 1,
+        ease: "power2.out"
+    },'a');
