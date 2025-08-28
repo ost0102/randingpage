@@ -1,4 +1,6 @@
 @use '../base/var';
+@use '../utils/mixin' as *;
+
 .footer{
     height: 10vh;
     &-inner{
@@ -13,6 +15,23 @@
         a{
             text-decoration: underline;
             text-underline-position: under;
+        }
+        @include mobile{
+            gap: 5px;
+        }
+        .logo, .git{
+            @include mobile{
+                flex:3;
+                text-align: center;
+                font-size: 12px;
+            }
+        }
+        .tel, .mail{
+            @include mobile{
+                flex:5;
+                text-align: center;
+                font-size: 12px;                
+            }
         }
     }
 }

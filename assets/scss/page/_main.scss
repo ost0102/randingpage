@@ -1,4 +1,5 @@
 @use '../base/var';
+@use '../utils/mixin' as *;
 
 .s1{
     height: 600vh;
@@ -8,6 +9,7 @@
         left: 50%;
         transform: translate(-50%, -50%);
         width: 100%;
+        height: 100%;
         h2{
             color: var.$Mcl;
             font-family: var.$Mft;
@@ -16,18 +18,20 @@
             letter-spacing: -10px;
             text-transform: uppercase;
             text-align: center;
+            @include mobile{
+                letter-spacing: -2px;
+            }
         }
-        .s1_top-tit{
+        .s1-tit{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             position: relative;
             z-index: 2;
             mix-blend-mode: luminosity;
             line-height: .8;
-        }
-        .s1_bottom-tit{
-            position: relative;
-            z-index: 2;
-            mix-blend-mode: luminosity;
-            line-height: .8;
+            height: 100%;
         }
         #video{
             position: absolute;
@@ -35,6 +39,9 @@
             left: 50%;
             transform: translate(-50%, -50%) rotate(-15deg) scale(.3);
             opacity: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         .video-tit{
             position: absolute;
@@ -60,22 +67,37 @@
     &-inner{
         display: flex;
         flex-direction: column;
+        justify-content: space-between;
         padding: 40px;
+        height: 100%;
+        @include mobile{
+            gap: 10px;
+            padding: 20px;
+        }
         .s2-tit{
             h2{
                 font-size: 10vw;
                 font-family: var.$Mft;
                 font-weight: 700;
+                @include mobile{
+                    font-size: 18vw;
+                }
             }
             p{
                 font-size: 2vw;
                 font-family: var.$Mft;
                 font-weight: 700;
+                @include mobile{
+                    font-size: 4vw;
+                }
                 svg{
                     display: inline-block;
                     position: absolute;
                     stroke: var.$Mcl;
                     width: 3vw;
+                    @include mobile{
+                        width: 5vw;
+                    }
                 }
                 .devlop{
                     transform: scale(0);
@@ -83,27 +105,45 @@
             }
         }
         .s2-contents{
-            margin-left: auto;
             &-inner{
                 display: flex;
                 gap: 30px;
+                @include mobile{
+                    gap: 20px;
+                    flex-direction: column-reverse;
+                }
                 .s2-contents-tit{
                     display: flex;
                     flex-direction: column;
                     justify-content: flex-end;
                     gap: 10px;
+                    width: 50%;
+                    @include mobile{
+                        width: 100%;
+                    }
                     p{
-                        font-size: 1.5vw;
+                        font-size: 2vw;
                         font-family: var.$Mft;
                         font-weight: 700;
                         line-height: 1.5;
                         text-align: right;
+                        @include mobile{
+                            text-align: left;
+                            font-size: 3.5vw;
+                        }
                     }
                 }
                 img{
                     opacity: 0;
                     border-radius: 20px;
                     transform: translateX(-100px);
+                    width: 50%;
+                    height: 400px;
+                    object-fit: cover;
+                    @include mobile{
+                        height: 200px;
+                        margin-left: auto;
+                    }
                 }
             }
         }
@@ -114,6 +154,9 @@
     height: 500vh;
     background: var.$Mcl;
     margin-top: 150px;
+    @include mobile{
+        margin-top: 50px;
+    }
     .s3-tit{
         display: flex;
         align-items: center;
@@ -131,49 +174,82 @@
     .project-list{
         li{
             position: absolute;
-            max-width: 360px;
-            width: 100%;
+            width: 28%;
             height: 360px;
             transform: translateX(-50%);
+            @include mobile{
+                width: 35%;
+                height: 180px;
+            }
             &:nth-child(1){
                 left: 20%;
                 top: 25%;
+                @include mobile{
+                    top: 15%;
+                }
             }
             &:nth-child(2){
                 top: 30%;
                 left: 80%;
+                @include mobile{
+                    top: 20%;
+                }
             }
             &:nth-child(3){
                 top: 35%;
                 left: 50%;
+                @include mobile{
+                    top: 30%;
+                }
             }
             &:nth-child(4){
                 top: 40%;
                 left: 20%;
+                @include mobile{
+                    top: 40%;
+                }
             }
             &:nth-child(5){
                 top: 45%;
                 left: 80%;
+                @include mobile{
+                    top: 45%;
+                }
             }
             &:nth-child(6){
                 top: 50%;
                 left: 50%;
+                @include mobile{
+                    top: 55%;
+                }
             }
             &:nth-child(7){
                 top: 55%;
                 left: 20%;
+                @include mobile{
+                    top: 65%;
+                }
             }
             &:nth-child(8){
                 top: 60%;
                 left: 80%;
+                @include mobile{
+                    top: 70%;
+                }
             }
             &:nth-child(9){
                 top: 65%;
                 left: 50%;
+                @include mobile{
+                    top: 80%;
+                }
             }
             &:nth-child(10){
                 top: 70%;
                 left: 20%;
+                @include mobile{
+                    top: 90%;
+                }
             }
             a{
                 position: relative;
@@ -185,9 +261,15 @@
                     object-fit: cover;
                     border-radius: 15px;
                     fill: #fff;
+                    @include mobile{
+                        background: rgba(0, 0, 0, .1);
+                    }
                 }
                 &:hover{
                     backdrop-filter: blur(10px);
+                    @include mobile{
+                        backdrop-filter: unset;
+                    }
                     .txt-box{
                         opacity: 1;
                     }
@@ -209,12 +291,24 @@
                     backdrop-filter: blur(10px);
                     border-radius: 15px;
                     opacity: 0;
+                    @include mobile{
+                        backdrop-filter: unset;
+                        background: unset;
+                        opacity: 1;
+                        mix-blend-mode: difference;
+                    }
                     p{
                         text-align: center;
                         font-family: "r-txt";
                         font-size: 26px;
+                        @include mobile{
+                            font-size: 2vw;
+                        }
                         &:nth-child(3){
                             font-size: 20px;
+                            @include mobile{
+                                font-size: 12px;
+                            }
                         }
                     }
                 }
@@ -227,6 +321,9 @@
         bottom: 150px;
         transform: translate(-50%, -50%);
         z-index: 10;
+        @include mobile{
+            bottom: 80px;
+        }
         .area{
             a{
                 display: flex;
@@ -245,6 +342,12 @@
                 font-size: 26px;
                 line-height: 0.9;
                 text-align: center;
+                @include mobile{
+                    width: 100px;
+                    height: 100px;
+                    font-size: 14px;
+                    pointer-events: none;
+                }
                 &:hover{
                     .hover{
                         clip-path: circle(50% at 50% 50%);
@@ -296,6 +399,9 @@
         font-family: var(--barlow);
         color: #666;
         opacity: 0;
+        @include mobile{
+            display: none;
+        }
         span{
             font-size: 18px;
             font-family: var.$Mft;
@@ -312,11 +418,28 @@
     &-inner{
         display: flex;
         padding: 0 20px;
+        @include mobile{
+            flex-direction: column;
+        }
         .s4-left{
             width: 50%;
+            @include mobile{
+                width: 100%;
+            }
             &-inner{
                 padding-top: 150px;
+                @include mobile{
+                    display: flex;
+                    align-items: center;
+                    position: unset;
+                    overflow: visible;
+                    height: unset;
+                    padding-top: 50px;
+                }
                 .s4-tit{
+                    @include mobile{
+                        width: 50%;
+                    }
                     h2{
                         font-size: 10vw;
                         font-family: var.$Mft;
@@ -328,6 +451,10 @@
                     position: relative;
                     width: 100%;
                     height: calc(100vh - 534px);
+                    @include mobile{
+                        width: 50%;
+                        height: calc(100vh - 400px);
+                    }
                     #matter{
                         position: absolute;
                         top: 50%;
@@ -348,6 +475,11 @@
                             font-weight: 700;
                             font-family: var.$Rft;
                             font-size: 20px;
+                            @include mobile{
+                                width: 110px;
+                                height: 30px;
+                                font-size: 9px;
+                            }
                             &:nth-child(1){
                                 background: rgba(255,123,202,0.5);
                             }
@@ -384,11 +516,19 @@
         }
         .s4-right{
             padding-top: 150px;
+            @include mobile{
+                padding-top: 50px;
+            }
             .sect-list{
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 gap: 200px;
+                @include mobile{
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 40px;
+                }
                 li{
                     font-size: 5vw;
                     font-family: var.$Mft;
@@ -399,10 +539,17 @@
                     text-align: center;
                     transition: .3s all ease;
                     width: 33vw;
+                    @include mobile{
+                        width: unset;
+                        letter-spacing: -2px;
+                    }
                     .txt-box{
                         width: fit-content;
                         margin: auto;
                         position: relative;
+                        @include mobile{
+                            position: unset;
+                        }
                         span{
                             position: absolute;
                             right: -10%;
@@ -419,11 +566,17 @@
                             border-radius: 41rem;
                             clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%);
                             transition: clip-path 0.3s;
+                            @include mobile{
+                                display: none;
+                            }
                         }
                         &:hover{
                             color: #000;
                             span{
                                 clip-path: polygon(0% 0, 100% 0, 100% 100%, 0% 100%);
+                            }
+                            @include mobile{
+                                pointer-events: none;
                             }
                         }
                     }
@@ -489,6 +642,12 @@
                 background: linear-gradient(-80deg, #fff, #e0e0e0          );
                 box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1), inset 3px 3px 5px rgba(255, 255, 255, 0.7), inset -3px -3px 5px rgba(0, 0, 0, 0.1);
                 transition: all 0.3s ease;
+                @include mobile{
+                    width: 20vw;
+                    padding: 25px 0;
+                    font-size: 2vw;
+                    border-radius: 50px;
+                }
             }
         }
     }
@@ -496,6 +655,9 @@
 
 .s6{
     height: 300vh;
+    @include mobile{
+        height: 200vh;
+    }
     .s6-inner{
         .s6-tit{
             position: absolute;
@@ -523,6 +685,10 @@
             overflow: hidden;
             opacity: 0;
             transform: scale(1.5);
+            @include mobile{
+                width: 40vw;
+                height: 40vw;
+            }
             a{
                 display: block;
                 width: 100%;
@@ -534,6 +700,10 @@
                     width: 19.8vw;
                     height: 19.8vw;
                     transform: rotate(40deg);
+                    @include mobile{
+                        width: 40vw;
+                        height: 40vw;
+                    }
                     .visible{
                         position: absolute;
                         left: 0;
@@ -541,6 +711,10 @@
                         width: 19.8vw;
                         height: 10.8vw;
                         overflow: hidden;
+                        @include mobile{
+                            width: 40vw;
+                            height: 22vw;
+                        }
                     }
                     .cont-wrap{
                         position: absolute;
@@ -549,6 +723,10 @@
                         width: 19.8vw;
                         height: 19.8vw;
                         transform: rotate(-33deg);
+                        @include mobile{
+                            width: 40vw;
+                            height: 40vw;
+                        }
                         img{
                             width: 100%;
                         }
@@ -561,6 +739,10 @@
                     width: 19.8vw;
                     height: 19.8vw;
                     transform: rotate(40deg);
+                    @include mobile{
+                        width: 40vw;
+                        height: 40vw;
+                    }
                     .shadow{
                         position: absolute;
                         left: 0;
@@ -569,6 +751,11 @@
                         height: 19.8vw;
                         border-radius: 50%;
                         box-shadow: -2px 3px 12px rgba(0,0,0,0.18);
+                        @include mobile{
+                            width: 40vw;
+                            height: 40vw;
+                            bottom: 3.6vw;
+                        }
                     }
                     .visible{
                         position: absolute;
@@ -577,6 +764,11 @@
                         width: 19.8vw;
                         height: 9vw;
                         overflow: hidden;
+                        @include mobile{
+                            width: 40vw;
+                            height: 18vw;
+                            top: 18vw;
+                        }
                     }
                     .paper{
                         position: absolute;
@@ -586,6 +778,10 @@
                         bottom: 0;
                         border-radius: 50%;
                         background: #ff9a9a;
+                        @include mobile{
+                            width: 40vw;
+                            height: 40vw;
+                        }
                     }
                 }
             }
@@ -607,4 +803,9 @@
     font-weight: bold;
     z-index: 999;
     box-shadow: 5px 5px 6px #444;
+    @include mobile{
+        width: 70px;
+        height: 70px;
+        font-size: 2vw;
+    }
 }

@@ -1,4 +1,5 @@
 @use '../base/var';
+@use '../utils/mixin' as *;
 
 .header{
     position:fixed;
@@ -8,6 +9,7 @@
     z-index: 10;
     background: rgba(255, 255, 255, .3);
     backdrop-filter: blur(10px);
+    transition: transform 0.3s ease-in-out;
     &-inner{
         display: flex;
         align-items: center;
@@ -18,6 +20,9 @@
                 font-family: var.$Lft;
                 font-size: 2.4rem;
                 font-weight: 700;
+                @include mobile{
+                    font-size: 6vw;
+                }
             }
         }
         .nav{
@@ -26,6 +31,9 @@
             gap: 20px;
             font-family: var.$Rft;
             letter-spacing: -1.5px;
+            @include mobile{
+                font-size: 14px;
+            }
         }
     }
 }

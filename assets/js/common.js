@@ -10,6 +10,38 @@ const lenis = new Lenis({
   }
   requestAnimationFrame(raf);
 
+// 헤더 스크롤 기능
+function initHeaderScroll() {
+    const header = document.querySelector('.header');
+    if (!header) return; // 헤더가 없으면 함수 종료
+    
+    let lastScrollTop = 0;
+    const scrollThreshold = 100; // 스크롤 임계값
+
+    function handleScroll() {
+        const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        // 스크롤 방향 확인
+        if (currentScrollTop > lastScrollTop && currentScrollTop > scrollThreshold) {
+            // 스크롤을 내릴 때 (헤더 숨기기)
+            header.style.transform = 'translateY(-100%)';
+            header.style.transition = 'transform 0.3s ease-in-out';
+        } else if (currentScrollTop < lastScrollTop) {
+            // 스크롤을 올릴 때 (헤더 보이기)
+            header.style.transform = 'translateY(0)';
+            header.style.transition = 'transform 0.3s ease-in-out';
+        }
+        
+        lastScrollTop = currentScrollTop;
+    }
+
+    // 스크롤 이벤트 리스너 추가
+    window.addEventListener('scroll', handleScroll);
+}
+
+// DOM이 완전히 로드된 후 헤더 스크롤 기능 초기화
+document.addEventListener('DOMContentLoaded', initHeaderScroll);
+
 
 document.fonts.ready.then(() => {
     // 애니메이션 시작 코드...

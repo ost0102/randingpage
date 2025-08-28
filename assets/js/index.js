@@ -12,14 +12,14 @@
 // 이후에 폰트 로드 후 애니메이션 실행 (스크롤 이동과 분리)
 document.fonts.ready.then(() => {
     // 애니메이션 시작 코드...
-    gsap.set([".s1_top-tit h2", ".s1_bottom-tit h2"], { opacity: 1 });
+    gsap.set([".s1-tit-top", ".s1-tit-bottom"], { opacity: 1 });
 
-    let splitTop = new SplitType(".s1_top-tit h2", {
+    let splitTop = new SplitType(".s1-tit-top", {
         types: "chars, words",
         tagName: "span"
     });
 
-    let splitBottom = new SplitType(".s1_bottom-tit h2", {
+    let splitBottom = new SplitType(".s1-tit-bottom", {
         types: "chars, words",
         tagName: "span"
     });
@@ -64,11 +64,11 @@ function createVideoTimeline() {
     });
     
     s1Tl2
-        .to(".s1_top-tit h2", {
+        .to(".s1-tit-top", {
             y: -200,
             opacity: 0,
         },"a")
-        .to(".s1_bottom-tit h2", {
+        .to(".s1-tit-bottom", {
             y: 200,
             opacity: 0,
         },"a")
@@ -78,9 +78,9 @@ function createVideoTimeline() {
             opacity: 1,
             transform: "translate(-50%, -50%) rotate(0deg) scale(1)",
         },"a")
-        .to(".video-tit", {
-            y: 0,
+        .to(".video-tit", {            
             opacity: 1,
+            transform: "translate(-50%, -50%)",
         });
 }
 
@@ -1085,6 +1085,24 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         speed: 3000,
         allowTouchMove: false,
+        breakpoints: {
+            320: {
+                slidesPerView: 3,
+                spaceBetween: 10,
+            },
+            768: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+            },
+            1024: {
+                slidesPerView: 5,
+                spaceBetween: 30,
+            },
+            1440: {
+                slidesPerView: 5,
+                spaceBetween: 30,
+            }
+        }
     });
 
     // skill2 Swiper 초기화 (반대 방향)
@@ -1099,17 +1117,35 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         speed: 3000,
         allowTouchMove: false,
+        breakpoints: {
+            320: {
+                slidesPerView: 3,
+                spaceBetween: 10,
+            },
+            768: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+            },
+            1024: {
+                slidesPerView: 5,
+                spaceBetween: 30,
+            },
+            1440: {
+                slidesPerView: 5,
+                spaceBetween: 30,
+            }
+        }
     });
 });
 
 
 // sect6
 let sect6Timeline = gsap.matchMedia();
-let breakPoint = 768;
+let breakPoint = 769;
 
 sect6Timeline.add({
-        isDesktop: `(min-width: ${breakPoint + 1}px)`,
-        isMobile: `(max-width: ${breakPoint}px)`,
+        isDesktop: `(min-width: ${breakPoint}px)`,
+        isMobile: `(max-width: ${breakPoint - 1}px)`,
         reduceMotion: "(prefers-reduced-motion: reduce)",
     },
     (context) => {
@@ -1127,24 +1163,24 @@ sect6Timeline.add({
 
     sect6Tl.fromTo('.s6 .sticker', {opacity:0, scale: 1.5, x:'-60%', y:'-40%'}, {duration:0.5, opacity:1, scale: 1, x:'-50%', y:'-50%'});
     sect6Tl.fromTo('.s6 .sticker .sticker-img .visible', {
-        height: target ? '10.8vw' : '26vw'
+        height: target ? '10.8vw' : '22vw'
     }, {
         duration:1, 
-        height: target ? '17.8vw' : '45vw'
+        height: target ? '17.8vw' : '36vw'
     })
     sect6Tl.fromTo('.s6 .sticker .sticker-front .visible', {
-        top: target ? '9vw' : '24vw', 
-        height: target ? '9vw' : '24vw'
+        top: target ? '9vw' : '18vw', 
+        height: target ? '9vw' : '18vw'
     }, {
         duration:1, 
-        top: target ? '2vw' : '5vw', 
-        height: target ? '2vw' : '5vw', 
+        top: target ? '2vw' : '4vw', 
+        height: target ? '2vw' : '4vw', 
     }, '<')
     sect6Tl.fromTo('.s6 .sticker .sticker-front .shadow', {
-        bottom: target ? '1.8vw' : '2vw'
+        bottom: target ? '1.8vw' : '3.6vw'
     }, {
         duration:1, 
-        bottom: target ? '15.8vw' : '40vw'
+        bottom: target ? '15.8vw' : '31.6vw'
     }, '<');
     }
 )
