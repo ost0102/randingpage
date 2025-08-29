@@ -17,10 +17,11 @@
   text-align: center;
 }
 .page-tit h1 {
-  font-size: 20vw;
+  font-size: 19vw;
   font-family: "Logo", sans-serif;
   font-weight: 700;
   line-height: 1;
+  white-space: nowrap;
 }
 .page-tit p {
   font-size: 3.5vw;

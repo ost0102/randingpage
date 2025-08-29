@@ -17,10 +17,11 @@
     width: 100%;
     text-align: center;
     h1{
-        font-size: 20vw;
+        font-size: 19vw;
         font-family: var.$Lft;
         font-weight: 700;
         line-height: 1;
+        white-space: nowrap;
     }
     p{
         font-size: 3.5vw;  
