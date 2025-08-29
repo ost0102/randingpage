@@ -86,6 +86,14 @@ function createVideoTimeline() {
 
 // 비디오 로드 이벤트 리스너
 if (video) {
+    // 자동재생 비활성: 폴백 및 강제 play 제거, 인라인 속성만 유지
+    try {
+        video.muted = true;
+        video.setAttribute('muted', '');
+        video.setAttribute('playsinline', '');
+        video.setAttribute('webkit-playsinline', '');
+        video.removeAttribute('autoplay');
+    } catch (e) {}
     video.addEventListener('loadedmetadata', function() {
         createVideoTimeline();
     });
