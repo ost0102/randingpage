@@ -86,7 +86,7 @@ function createVideoTimeline() {
 
 // 비디오 로드 이벤트 리스너
 if (video) {
-    // 자동재생 비활성: 폴백 및 강제 play 제거, 인라인 속성만 유지
+    // 자동재생 비활성: 인라인 속성만 유지
     try {
         video.muted = true;
         video.setAttribute('muted', '');
@@ -94,14 +94,11 @@ if (video) {
         video.setAttribute('webkit-playsinline', '');
         video.removeAttribute('autoplay');
     } catch (e) {}
-    video.addEventListener('loadedmetadata', function() {
-        createVideoTimeline();
-    });
-    
-    // 이미 로드된 경우
-    if (video.readyState >= 2) {
-        createVideoTimeline();
-    }
+    // 메타데이터/데이터 로드 후 타임라인 생성 (iOS 대응)
+    video.addEventListener('loadedmetadata', createVideoTimeline);
+    video.addEventListener('loadeddata', function(){ if (!s1Tl2) createVideoTimeline(); });
+    // iOS에서 이벤트 지연 대비 타임아웃 폴백
+    setTimeout(function(){ if (!s1Tl2 && video.readyState >= 2) createVideoTimeline(); }, 1500);
 }
 
 const s2Tl = gsap.timeline({
