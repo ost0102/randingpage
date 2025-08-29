@@ -1,4 +1,6 @@
 @use '../base/var';
+@use '../utils/mixin' as *;
+
 .portfolio-s1{
     height: 100vh;
 }
@@ -9,6 +11,11 @@
             justify-content: center;
             align-items: center;
             gap: 20px;
+            padding: 20px;
+            @include mobile{
+                flex-wrap: wrap;
+                gap: 10px;
+            }
             li{
                 button{
                     font-size: 20px;
@@ -18,6 +25,9 @@
                     border-radius: 30px;
                     background: #fff;
                     padding: 5px 20px;
+                    @include mobile{
+                        font-size: 2.8vw;
+                    }
                     &.select{
                         background: #000;
                         color: #fff;
@@ -27,6 +37,9 @@
         }
         .portfolio-list{
             padding: 120px 20px;
+            @include mobile{
+                padding: 20px 20px 180px 20px;
+            }
             .portfolio-item{
                 display: flex;
                 align-items: center;
@@ -38,6 +51,9 @@
                 transition: opacity 0.4s ease-out, transform 0.4s ease-out;
                 opacity: 1;
                 transform: translateY(0);
+                @include mobile{
+                    min-height: 130px;
+                }
                 &:nth-child(1){
                     border-top: 1px solid #D7D7D7;
                 }
@@ -52,6 +68,9 @@
                         }
                         img{
                             width: 90px;
+                            @include mobile{
+                                width: 15vw;
+                            }
                         }
                     }
                 }
@@ -68,6 +87,9 @@
                 }
                 > a{
                     width: 90%;
+                    @include mobile{
+                        pointer-events: none;
+                    }
                     &:hover{
                         .thumb{
                             opacity: 1;
@@ -78,12 +100,18 @@
                         font-family: var.$Lft;
                         color: #000;
                         font-weight: 500;
+                        @include mobile{
+                            font-size: 7vw;
+                        }
                     }
                     span{
                         font-size: 16px;
                         font-weight: 400;
                         color: #000;
                         font-family: var.$Lft;
+                        @include mobile{
+                            font-size: 3vw;
+                        }
                     }
                     .thumb{
                         position: absolute;
@@ -106,6 +134,9 @@
                 }
                 .git{
                     width: 90px;
+                    @include mobile{
+                        width: 15vw;
+                    }
                     a{
                         img{
 

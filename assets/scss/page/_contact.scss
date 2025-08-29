@@ -1,16 +1,30 @@
 @use '../base/var';
+@use '../utils/mixin' as *;
 
 .contact-s1{
     height: 100vh;
 }
 .contact-s2{
-    padding: 0 200px;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    @include mobile{
+        max-width: unset;
+        padding: 0 40px;
+    }
     .contact-inner{
         .form-area{
             display: flex;
             flex-wrap: wrap;
             gap: 30px;
+            @include mobile{
+                flex-direction: column;
+            }
             .item{
+                @include mobile{
+                    max-width: 100% !important;
+                }
                 &:not(:nth-child(5)){
                     max-width: calc(50% - 15px);
                     width: 100%;
@@ -23,6 +37,9 @@
                     font-size: 25px;
                     font-weight: 500;
                     font-family: var.$Lft;
+                    @include mobile{
+                        font-size: 3.5vw;
+                    }
                 }
                 .form-cont{
                     input{
@@ -51,6 +68,9 @@
                     font-size: 14px;
                     margin-top: 8px;
                     font-family: var.$Mft;
+                    @include mobile{
+                        font-size: 2.5vw;
+                    }
                 }
             }
             .btn-box{
@@ -75,6 +95,11 @@
                         line-height: 0.9;
                         text-align: center;
                         cursor: pointer;
+                        @include mobile{
+                            width: 34vw;
+                            height: 34vw;
+                            font-size: 5vw;
+                        }
                         &:hover{
                             .hover{
                                 clip-path: circle(50% at 50% 50%);

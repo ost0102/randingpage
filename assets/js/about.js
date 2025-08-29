@@ -49,7 +49,7 @@ const aboutS3Tl2 = gsap.timeline({
     scrollTrigger: {
         trigger: ".about-s3",
         start: "top 40%",
-        end: "50% bottom",
+        end: "70% bottom",
         scrub: 1,
         toggleActions: "play none none none",
         onEnter: () => {
@@ -148,35 +148,113 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-let circleTl3 = gsap.timeline({
-    scrollTrigger: {
-        trigger: ".s4_tl",
-        start: "top+=1500 top",
-        end: "top+=3000 top",
-        scrub: true,
-    }
-});
-circleTl3
-    .to('.circle-img',{opacity:1})
-    .to('.circle-img.to-left',{xPercent:-150},'0')
-    .to('.circle-img.to-right',{xPercent:50},'0')
-    .to('.circle__inner', { y: 10, opacity: 0, duration: 0.5, ease: "power1.in" })
-    .to('.circle-img-txt',{opacity:1})
-    .to({}, {
-        duration:1,
-        onUpdate: function() {
-            if (od01) {
-                let progress = this.progress();
-                let value = Math.round(progress * 10);
-                od01.update(value);
+ScrollTrigger.matchMedia({
+
+    // 768px 이하
+    "(max-width: 768px)": function() {
+        let circleTl3 = gsap.timeline({
+            scrollTrigger: {
+            trigger: ".s4_tl",
+            start: "top+=1500 top",
+            end: "top+=2000 top",
+            scrub: true,
+            toggleActions: "play none none reverse",
             }
-            if (od02) {
+        });
+
+    circleTl3
+        .to('.circle-img',{opacity:1})
+        .to('.circle-img.to-left',{yPercent:-150},'0')
+        .to('.circle-img.to-right',{yPercent:50},'0')
+        .to('.circle__inner', { y: 10, opacity: 0, duration: 0.5, ease: "power1.in" })
+        .to('.circle-img-txt',{opacity:1, duration: 0.3, ease: "power2.out"})
+        .to({}, {
+            duration:0.5,
+            onUpdate: function() {
+                if (od01) {
+                    let progress = this.progress();
+                    let value = Math.round(progress * 10);
+                    od01.update(value);
+                }
+            }
+        },'a')
+        .to('.circle-img.to-left .circle-img-txt',{opacity:1, duration: 0.3, ease: "power2.out"})
+        .to({}, {
+            duration:0.5,
+            onUpdate: function() {
+                if (od02) {
                 let progress = this.progress();
                 let value = Math.round(progress * 4);
                 od02.update(value);
+                }
             }
-        }
-    })
+        }, 'a')
+        .to('.circle-img.to-right .circle-img-txt',{opacity:1, duration: 0.3, ease: "power2.out"});
+    },
+
+    // 769px 이상
+    "(min-width: 769px)": function() {
+        let circleTl3 = gsap.timeline({
+            scrollTrigger: {
+            trigger: ".s4_tl",
+            start: "top+=1500 top",
+            end: "top+=3000 top",
+            scrub: true,
+            toggleActions: "play none none reverse",
+            }
+        });
+
+        circleTl3
+            .to('.circle-img',{opacity:1})
+            .to('.circle__inner', { y: 10, opacity: 0, duration: 0.5, ease: "power1.in" })
+            .to('.circle-img.to-left',{xPercent:-150},'0')
+            .to('.circle-img.to-right',{xPercent:50},'0')
+            .to('.circle-img-txt',{opacity:1})
+            .to({}, {
+            duration:0.5,
+            onUpdate: function() {
+                if (od01) {
+                let progress = this.progress();
+                let value = Math.round(progress * 10);
+                od01.update(value);
+                }
+            }
+        })
+        .to('.circle-img.to-left .circle-img-txt',{opacity:1, duration: 0.3, ease: "power2.out"})
+        .to({}, {
+            duration:0.5,
+            onUpdate: function() {
+                if (od02) {
+                let progress = this.progress();
+                let value = Math.round(progress * 4);
+                od02.update(value);
+                }
+            }
+        })
+        .to('.circle-img.to-right .circle-img-txt',{opacity:1, duration: 0.3, ease: "power2.out"});
+    }
+
+});
+
+const s5Tl = gsap.timeline({
+    scrollTrigger:{
+        trigger: ".about-s5",
+        start:"top 30%",
+        end: "90% bottom",
+        scrub:true,
+    }
+})
+s5Tl
+    .to('.about-s5-inner .char-box .char-box-inner .txt-box .txt',
+        {
+            opacity:1
+        },'0'
+    )
+    .to('.about-s5-inner .char-box .char-box-inner .txt-box .bg',
+        {
+            clipPath:'polygon(100% 0, 0% 100%, 100% 100%)',
+        },'0'
+    )
 
 gsap.to('.about-s5-tit',{
     xPercent: -100,       

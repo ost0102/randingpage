@@ -1,4 +1,6 @@
 @use '../base/var';
+@use '../utils/mixin' as *;
+
 .about-s1{
     position: relative;
     height: 100vh;
@@ -11,14 +13,25 @@
         justify-content: space-between;
         padding: 0 20px;
         height: 100%;
+        gap: 20px;
+        @include mobile{
+            flex-direction: column;
+            justify-content: space-around;
+        }
         .about-s2-tit{
+            @include mobile{
+                margin-right: auto;
+            }
             h2{
                 font-family: var.$Lft;
-                font-size: 180px;
+                font-size: 13vw;
                 font-weight: 700;
+                @include mobile{
+                    font-size: 20vw;
+                }
                 p{
                     position: relative;
-                    font-size: 78px;
+                    font-size: 4vw;
                     font-weight: 500;
                     svg{
                         display: inline-block;
@@ -34,8 +47,11 @@
         .about-s2-txt{
             margin-top: 100px;
             p{
-                font-size: 40px;
+                font-size: 2vw;
                 font-weight: 400;
+                @include mobile{
+                    font-size: 3.5vw;
+                }
             }
         }
     }
@@ -48,6 +64,8 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+        width: 100%;
+        padding: 20px;
         .about-s3-tit{
             h2{
                 p{
@@ -64,7 +82,13 @@
                         transition: width 0.8s cubic-bezier(.6,0,.2,1), opacity 0.5s linear;
                         &.active{
                             opacity: 1;
-                            width: 308px;
+                            width: 180px;
+                            @include mobile{
+                                width: 150px;
+                            }
+                            @include mobile2{
+                                width: 60px;
+                            }
                         }
                     }
                 }
@@ -78,6 +102,9 @@
                 font-weight: 400;
                 font-family: var.$Mft;
                 text-align: center;
+                @include mobile{
+                    font-size: 3vw;
+                }
             }
         }
     }
@@ -92,14 +119,22 @@
                     &:nth-child(1){
                         font-size: 78px;
                         font-weight: 500;
+                        @include mobile{
+                            font-size: 10vw;
+                        }
                     }
                     &:nth-child(2){
-                        display: flex;
-                        flex-direction: column;
-                        gap: 10px;
                         font-size: 180px;
                         font-weight: 700;
                         line-height: 1;
+                        @include mobile{
+                            font-size: 20vw;
+                        }
+                        br{
+                            @include mobile{
+                                display: none;
+                            }
+                        }
                     }
                 }
             }
@@ -107,6 +142,9 @@
         .about-circle{
             height: 600vh;
             transition: background 0.5s ease-in-out;
+            @include mobile{
+                height: 400vh;
+            }
             &.active{
                 background: #ffa6a6;
             }
@@ -118,6 +156,10 @@
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
+                @include mobile{
+                    max-width: 60vw;
+                    width: 100%;
+                }
                 .circle__inner{
                     display: flex;
                     align-items: center;
@@ -125,34 +167,46 @@
                     position: absolute;
                     top: 50%;
                     left: 50%;
-                    transform: translate(-50%, -50%);
+                    transform: translate(-50%, -50%) !important;
                     width: max-content;
                     text-align: center;
                     .circle-txt1{
-                        font-size: 42px;
+                        font-size: 3vw;
                         font-weight: 700;
                         line-height: 1.5;
                         color: #000;
-                        margin-bottom: 40px;
+                        margin-bottom: 2vw;
+                        @include mobile{
+                            font-size: 4vw;
+                        }
                     }
                     .circle-txt2{
-                        font-size: 30px;
+                        font-size: 2vw;
                         font-weight: 700;
                         letter-spacing: 0.02rem;
                         color: #000;
-                        margin-bottom: 40px;
+                        margin-bottom: 2vw;
+                        @include mobile{
+                            font-size: 3vw;
+                        }
                     }
                     .circle-txt3{
                         line-height: 1.7;
-                        font-size: 18px;
+                        font-size: 1.2vw;
                         color: #fff;
                         font-weight: 400;
+                        @include mobile{
+                            font-size: 2vw;
+                        }
                     }
                     .circle-txt4{
                         line-height: 1.7;
-                        font-size: 18px;
+                        font-size: 1.2vw;
                         color: var.$Mcl;
                         font-weight: 700;
+                        @include mobile{
+                            font-size: 2vw;
+                        }
                     }
                     .ct{
                         opacity: 0;
@@ -180,9 +234,12 @@
                     .img-txt1{
                         position: absolute;
                         top: 30%;
-                        font-size: 26px;
+                        font-size: 3vw;
                         font-weight: 500;
                         line-height: 1.5;
+                        @include mobile{
+                            font-size: 5vw;
+                        }
                     }
                     .img-txt2{
                         display: flex;
@@ -191,13 +248,22 @@
                         position: absolute;
                         top: 60%;
                         transform: translateY(-50%);
-                        font-size: max(140px);
+                        font-size: 8vw;
                         line-height: 1.5;
+                        @include mobile{
+                            font-size: 13vw;
+                        }
                         &.etc{
-                            font-size: 30px;
+                            font-size: 1.5vw;
+                            @include mobile{
+                                font-size: 3vw;
+                            }
                         }
                         .val{
-                            font-size: 30px;
+                            font-size: 1.5vw;
+                            @include mobile{
+                                font-size: 3vw;
+                            }
                         }
                         .plus{
                             position: absolute;
@@ -205,6 +271,9 @@
                             right: -20px;
                             top: 44%;
                             transform: translateX(-50%);
+                            @include mobile{
+                                font-size: 4vw;
+                            }
                         }
                     }
                     span{
@@ -221,6 +290,9 @@
                     opacity: 0;
                     img{
                         position: absolute;
+                        @include mobile{
+                            // display: none;
+                        }
                     }
                     &-txt{
                         .img-txt1{
@@ -249,11 +321,14 @@
                 display: flex;
                 align-items: center;
                 flex-shrink: 0;
-                font-size: 120px;
+                font-size: 7vw;
                 font-family: var.$Lft;
                 font-weight: 700;
                 text-transform: uppercase;
                 white-space: nowrap;
+                img{
+                    width: 7vw;
+                }
             }
         }
         .char-box{
@@ -261,13 +336,22 @@
             grid-template-columns: repeat(4, 1fr);
             gap: 20px;
             padding: 0 20px;
+            @include mobile{
+                grid-template-columns: repeat(2, 1fr);
+            }
             .char-box-inner{
                 position: relative;
                 width: 100%;
                 aspect-ratio: 1 / 1;
                 overflow: hidden;
                 border-radius: 10px;
+                @include mobile{
+                    aspect-ratio: 1 / 1.5;
+                }
                 &:hover{
+                    @include mobile{
+                        pointer-events: none;
+                    }
                     .txt-box{
                         .bg{
                             clip-path: circle(50% at 50% 50%);
@@ -325,6 +409,18 @@
                         transform: translate(-50%, -50%);
                         clip-path: circle(0% at 50% 50%);
                         transition: clip-path 0.6s;
+                        @include mobile{
+                            left: unset;
+                            right: -1px;
+                            top: unset;
+                            bottom: -1px;
+                            width: 100%;
+                            height: 50%;
+                            clip-path: polygon(100% 100%, 0% 100%, 100% 100%);
+                            padding: 0;
+                            border-radius: 0;
+                            transform: unset;
+                        }
                     }
                     .txt{
                         position: absolute;
@@ -338,6 +434,21 @@
                         text-align: center;
                         transition: 0.5s 0.2s;
                         opacity: 0;
+                        @include mobile{
+                            opacity: 0;
+                            font-size: 3vw;
+                            top: unset;
+                            bottom: 5px;
+                            left: unset;
+                            right: 5px;
+                            transform: unset;
+                            width: fit-content;
+                        }
+                        br{
+                            @include mobile{
+                                display: none;
+                            }
+                        }
                     }
                 }
             }
@@ -358,6 +469,9 @@
                 font-family: var.$Lft;
                 font-size: 180px;
                 font-weight: 700;
+                @include mobile{
+                    font-size: 12vw;
+                }
             }
         }
         .progress-bar{
@@ -367,6 +481,9 @@
             right: 20px;
             height: 5px;
             background: #d9d9d9;
+            @include mobile{
+                top:35%;
+            }
             .progress-bar--inner{
                 position: absolute;
                 top: 0;
@@ -377,22 +494,33 @@
         }
         .career-slide{
             position: absolute;
-            top: 45%;
+            top: 40%;
             left: 20px;
+            @include mobile{
+                top:45%;
+            }
             .career-box{
                 display: flex;
-                gap: 200px;
+                gap: 100px;
                 &--inner{
                     flex-shrink: 0;
                     .year{
                         font-size: 96px;
                         font-weight: 700;
                         font-family: var.$Lft;
+                        @include mobile{
+                            font-size: 8vw;
+                            white-space: nowrap;
+                        }
                     }
                     .txt{
                         font-size: 28px;
                         font-weight: 400;
                         font-family: var.$Mft;
+                        @include mobile{
+                            font-size: 3vw;
+                            width: max-content;
+                        }
                     }
                 }
             }

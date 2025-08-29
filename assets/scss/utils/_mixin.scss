@@ -3,3 +3,8 @@
       @content;
   }
 }
+@mixin mobile2(){
+  @media(max-width:600px){
+      @content;
+  }
+}
