@@ -47,13 +47,22 @@ document.fonts.ready.then(() => {
 const video = document.querySelector("#video");
 let s1Tl2;
 
+// 비디오 재생 준비 후 타임라인 생성
 function createVideoTimeline() {
+    if (!video.duration) return; // 비디오 길이 없으면 종료
+
     s1Tl2 = gsap.timeline({
         scrollTrigger: {
             trigger: ".s1",
             start: "10% top",
             end: "90% bottom",
             scrub: true,
+            onUpdate: () => {
+                // 스크롤 진행 시 비디오 재생
+                if (video.paused) {
+                    video.play().catch(() => {}); // iOS fallback
+                }
+            }
         }
     });
 
@@ -71,20 +80,25 @@ function createVideoTimeline() {
         .to(".video-tit", { opacity: 1, transform: "translate(-50%, -50%)" });
 }
 
+// iOS/모바일 대비 초기 설정
 if (video) {
     video.muted = true;
     video.setAttribute('muted', '');
     video.setAttribute('playsinline', '');
     video.setAttribute('webkit-playsinline', '');
-    video.setAttribute('autoplay', '');
+    video.removeAttribute('autoplay'); // autoplay 제거
 
-    // iOS 자동재생 fallback
-    video.play().catch(() => {
-        video.addEventListener('click', () => video.play());
-    });
+    // 스크롤 또는 클릭 시 play() 호출
+    function ensurePlay() {
+        video.play().catch(() => {});
+    }
+    window.addEventListener("scroll", ensurePlay, { once: true });
+    video.addEventListener("click", ensurePlay);
 
+    // 메타데이터 로드 후 타임라인 생성
     video.addEventListener('loadedmetadata', createVideoTimeline);
 
+    // 이미 로드된 경우 바로 타임라인 생성
     if (video.readyState >= 2) {
         createVideoTimeline();
     }
