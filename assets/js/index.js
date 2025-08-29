@@ -44,7 +44,6 @@ document.fonts.ready.then(() => {
 });
     
 
-// 비디오 로드 확인 후 타임라인 생성
 const video = document.querySelector("#video");
 let s1Tl2;
 
@@ -57,48 +56,35 @@ function createVideoTimeline() {
             scrub: true,
         }
     });
-    
-    gsap.set(".video-tit", {
-        y: 100,
-        opacity: 0
-    });
-    
+
+    gsap.set(".video-tit", { y: 100, opacity: 0 });
+
     s1Tl2
-        .to(".s1-tit-top", {
-            y: -200,
-            opacity: 0,
-        },"a")
-        .to(".s1-tit-bottom", {
-            y: 200,
-            opacity: 0,
-        },"a")
-        .to("#video", {
-            currentTime: video.duration || 0,
+        .to(".s1-tit-top", { y: -200, opacity: 0 }, "a")
+        .to(".s1-tit-bottom", { y: 200, opacity: 0 }, "a")
+        .to(video, {
+            currentTime: () => video.duration || 0,
             ease: "none",
             opacity: 1,
-            transform: "translate(-50%, -50%) rotate(0deg) scale(1)",
-        },"a")
-        .to(".video-tit", {            
-            opacity: 1,
-            transform: "translate(-50%, -50%)",
-        });
+            transform: "translate(-50%, -50%) rotate(0deg) scale(1)"
+        }, "a")
+        .to(".video-tit", { opacity: 1, transform: "translate(-50%, -50%)" });
 }
 
-// 비디오 로드 이벤트 리스너
 if (video) {
-    // 자동재생 비활성: 폴백 및 강제 play 제거, 인라인 속성만 유지
-    try {
-        video.muted = true;
-        video.setAttribute('muted', '');
-        video.setAttribute('playsinline', '');
-        video.setAttribute('webkit-playsinline', '');
-        video.removeAttribute('autoplay');
-    } catch (e) {}
-    video.addEventListener('loadedmetadata', function() {
-        createVideoTimeline();
+    video.muted = true;
+    video.setAttribute('muted', '');
+    video.setAttribute('playsinline', '');
+    video.setAttribute('webkit-playsinline', '');
+    video.setAttribute('autoplay', '');
+
+    // iOS 자동재생 fallback
+    video.play().catch(() => {
+        video.addEventListener('click', () => video.play());
     });
-    
-    // 이미 로드된 경우
+
+    video.addEventListener('loadedmetadata', createVideoTimeline);
+
     if (video.readyState >= 2) {
         createVideoTimeline();
     }
