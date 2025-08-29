@@ -56,13 +56,7 @@ function createVideoTimeline() {
             trigger: ".s1",
             start: "10% top",
             end: "90% bottom",
-            scrub: true,
-            onUpdate: () => {
-                // 스크롤 진행 시 비디오 재생
-                if (video.paused) {
-                    video.play().catch(() => {}); // iOS fallback
-                }
-            }
+            scrub: true
         }
     });
 
@@ -86,14 +80,6 @@ if (video) {
     video.setAttribute('muted', '');
     video.setAttribute('playsinline', '');
     video.setAttribute('webkit-playsinline', '');
-    video.removeAttribute('autoplay'); // autoplay 제거
-
-    // 스크롤 또는 클릭 시 play() 호출
-    function ensurePlay() {
-        video.play().catch(() => {});
-    }
-    window.addEventListener("scroll", ensurePlay, { once: true });
-    video.addEventListener("click", ensurePlay);
 
     // 메타데이터 로드 후 타임라인 생성
     video.addEventListener('loadedmetadata', createVideoTimeline);
