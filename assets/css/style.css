@@ -574,7 +574,6 @@ input, select, textarea {
     width: 100px;
     height: 100px;
     font-size: 14px;
-    pointer-events: none;
   }
 }
 .s3 .btn-box .area a:hover .hover {
