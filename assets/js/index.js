@@ -1,14 +1,3 @@
-// window.addEventListener('load', () => {
-//     setTimeout(() => {
-//         lenis.start();
-//         lenis.scrollTo(0, { immediate: true });
-//     }, 100);
-// });
-
-// window.addEventListener('beforeunload', () => {
-//     lenis.scrollTo(0, { immediate: true });
-// });
-
 // 이후에 폰트 로드 후 애니메이션 실행 (스크롤 이동과 분리)
 document.fonts.ready.then(() => {
     // 애니메이션 시작 코드...
@@ -44,12 +33,9 @@ document.fonts.ready.then(() => {
 });
     
 
-// 비디오 로드 확인 후 타임라인 생성
-const video = document.querySelector("#video");
-let s1Tl2;
 
-function createVideoTimeline() {
-    s1Tl2 = gsap.timeline({
+
+let s1Tl2 = gsap.timeline({
         scrollTrigger: {
             trigger: ".s1",
             start: "10% top",
@@ -58,7 +44,7 @@ function createVideoTimeline() {
         }
     });
     
-    gsap.set(".video-tit", {
+    gsap.set(".s1-bg__tit", {
         y: 100,
         opacity: 0
     });
@@ -72,46 +58,17 @@ function createVideoTimeline() {
             y: 200,
             opacity: 0,
         },"a")
-        .to("#video", {
+        .to(".s1-bg", {
             opacity: 1,
             transform: "translate(-50%, -50%) rotate(0deg) scale(1)",
             ease: "none",
-            onUpdate: function() {
-                // iOS 대응: 자동재생 없이 단순히 비디오만 표시
-                try {
-                    const progress = this.progress();
-                    
-                    // 비디오가 준비되지 않았으면 무시
-                    if (!video.duration || video.readyState < 2) return;
-                    
-                    // 자동재생 제거 - 사용자가 직접 재생해야 함
-                } catch (e) {
-                    console.log('Video update error:', e);
-                }
-            }
         },"a")
-        .to(".video-tit", {            
+        .to(".s1-bg__tit",{            
             opacity: 1,
             transform: "translate(-50%, -50%)",
         });
-}
 
-// 비디오 로드 이벤트 리스너
-if (video) {
-    // 자동재생 비활성: 인라인 속성만 유지
-    try {
-        video.muted = true;
-        video.setAttribute('muted', '');
-        video.setAttribute('playsinline', '');
-        video.setAttribute('webkit-playsinline', '');
-        video.removeAttribute('autoplay');
-    } catch (e) {}
-    // 메타데이터/데이터 로드 후 타임라인 생성 (iOS 대응)
-    video.addEventListener('loadedmetadata', createVideoTimeline);
-    video.addEventListener('loadeddata', function(){ if (!s1Tl2) createVideoTimeline(); });
-    // iOS에서 이벤트 지연 대비 타임아웃 폴백
-    setTimeout(function(){ if (!s1Tl2 && video.readyState >= 2) createVideoTimeline(); }, 1500);
-}
+
 
 const s2Tl = gsap.timeline({
     scrollTrigger: {
