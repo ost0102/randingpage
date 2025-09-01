@@ -644,11 +644,6 @@ input, select, textarea {
 .s4 {
   position: relative;
 }
-@media (max-width: 768px) {
-  .s4 {
-    padding-bottom: 40px;
-  }
-}
 .s4-inner {
   display: flex;
   padding: 0 20px;
@@ -863,6 +858,12 @@ input, select, textarea {
 .s5 {
   padding: 100px 0;
   background: #f8f8f8;
+}
+@media (max-width: 768px) {
+  .s5 {
+    padding: 50px 0;
+    margin-top: 40px;
+  }
 }
 .s5 .skill {
   clear: both;
