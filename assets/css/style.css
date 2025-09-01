@@ -317,7 +317,7 @@ input, select, textarea {
   font-family: "m-txt", sans-serif;
   font-weight: 700;
   line-height: 1.5;
-  text-align: right;
+  text-align: left;
 }
 @media (max-width: 768px) {
   .s2-inner .s2-contents-inner .s2-contents-tit p {
@@ -375,6 +375,7 @@ input, select, textarea {
   .s3 .project-list li {
     width: 35%;
     height: 180px;
+    z-index: 9999;
   }
 }
 .s3 .project-list li:nth-child(1) {
@@ -548,7 +549,16 @@ input, select, textarea {
 }
 @media (max-width: 768px) {
   .s3 .btn-box {
-    bottom: 80px;
+    bottom: 0;
+    width: 100px;
+    height: 100px;
+  }
+}
+@media (max-width: 768px) {
+  .s3 .btn-box .area {
+    display: block;
+    width: 100%;
+    height: 100%;
   }
 }
 .s3 .btn-box .area a {

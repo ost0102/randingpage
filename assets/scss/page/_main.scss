@@ -127,7 +127,7 @@
                         font-family: var.$Mft;
                         font-weight: 700;
                         line-height: 1.5;
-                        text-align: right;
+                        text-align: left;
                         @include mobile{
                             text-align: left;
                             font-size: 3.5vw;
@@ -181,6 +181,7 @@
             @include mobile{
                 width: 35%;
                 height: 180px;
+                z-index: 9999;
             }
             &:nth-child(1){
                 left: 20%;
@@ -323,9 +324,16 @@
         transform: translate(-50%, -50%);
         z-index: 10;
         @include mobile{
-            bottom: 80px;
+            bottom: 0;
+            width: 100px;
+            height: 100px;
         }
         .area{
+            @include mobile{
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
             a{
                 display: flex;
                 position: absolute;
