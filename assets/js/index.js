@@ -77,19 +77,21 @@ function createVideoTimeline() {
             transform: "translate(-50%, -50%) rotate(0deg) scale(1)",
             ease: "none",
             onUpdate: function() {
-                // iOS에서 currentTime 조작 전에 재생 상태 확인
-                if (video.paused && video.readyState >= 2) {
-                    video.play().catch(() => {});
-                }
-                // currentTime 설정 (iOS 대응)
+                // iOS 대응: 단순 재생/일시정지만 처리
                 try {
                     const progress = this.progress();
-                    const targetTime = (video.duration || 0) * progress;
-                    if (video.currentTime !== targetTime && !isNaN(targetTime)) {
-                        video.currentTime = targetTime;
+                    
+                    // 비디오가 준비되지 않았으면 무시
+                    if (!video.duration || video.readyState < 2) return;
+                    
+                    // 스크롤 진행도에 따라 재생/일시정지
+                    if (progress > 0.1 && video.paused) {
+                        video.play().catch(() => {});
+                    } else if (progress < 0.05 && !video.paused) {
+                        video.pause();
                     }
                 } catch (e) {
-                    // iOS에서 currentTime 설정 실패 시 무시
+                    console.log('Video update error:', e);
                 }
             }
         },"a")
