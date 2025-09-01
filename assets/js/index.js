@@ -73,10 +73,25 @@ function createVideoTimeline() {
             opacity: 0,
         },"a")
         .to("#video", {
-            currentTime: video.duration || 0,
-            ease: "none",
             opacity: 1,
             transform: "translate(-50%, -50%) rotate(0deg) scale(1)",
+            ease: "none",
+            onUpdate: function() {
+                // iOS에서 currentTime 조작 전에 재생 상태 확인
+                if (video.paused && video.readyState >= 2) {
+                    video.play().catch(() => {});
+                }
+                // currentTime 설정 (iOS 대응)
+                try {
+                    const progress = this.progress();
+                    const targetTime = (video.duration || 0) * progress;
+                    if (video.currentTime !== targetTime && !isNaN(targetTime)) {
+                        video.currentTime = targetTime;
+                    }
+                } catch (e) {
+                    // iOS에서 currentTime 설정 실패 시 무시
+                }
+            }
         },"a")
         .to(".video-tit", {            
             opacity: 1,
