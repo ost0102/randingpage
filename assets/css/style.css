@@ -644,6 +644,11 @@ input, select, textarea {
 .s4 {
   position: relative;
 }
+@media (max-width: 768px) {
+  .s4 {
+    padding-bottom: 40px;
+  }
+}
 .s4-inner {
   display: flex;
   padding: 0 20px;

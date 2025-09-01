@@ -423,6 +423,9 @@
 
 .s4{
     position: relative;
+    @include mobile{
+        padding-bottom: 40px;
+    }
     &-inner{
         display: flex;
         padding: 0 20px;
