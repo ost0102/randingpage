@@ -236,25 +236,30 @@ ScrollTrigger.matchMedia({
 
 });
 
-const s5Tl = gsap.timeline({
-    scrollTrigger:{
-        trigger: ".about-s5",
-        start:"top 30%",
-        end: "90% bottom",
-        scrub:true,
+ScrollTrigger.matchMedia({
+    // 768px 이하 (모바일)
+    "(max-width: 768px)": function() {
+        const s5Tl = gsap.timeline({
+            scrollTrigger:{
+                trigger: ".about-s5",
+                start:"top 30%",
+                end: "90% bottom",
+                scrub:true,
+            }
+        })
+        s5Tl
+            .to('.about-s5-inner .char-box .char-box-inner .txt-box .txt',
+                {
+                    opacity:1
+                },'0'
+            )
+            .to('.about-s5-inner .char-box .char-box-inner .txt-box .bg',
+                {
+                    clipPath:'polygon(100% 0, 0% 100%, 100% 100%)',
+                },'0'
+            )
     }
 })
-s5Tl
-    .to('.about-s5-inner .char-box .char-box-inner .txt-box .txt',
-        {
-            opacity:1
-        },'0'
-    )
-    .to('.about-s5-inner .char-box .char-box-inner .txt-box .bg',
-        {
-            clipPath:'polygon(100% 0, 0% 100%, 100% 100%)',
-        },'0'
-    )
 
 gsap.to('.about-s5-tit',{
     xPercent: -100,       
