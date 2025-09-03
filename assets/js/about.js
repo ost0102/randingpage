@@ -164,8 +164,8 @@ ScrollTrigger.matchMedia({
 
     circleTl3
         .to('.circle-img',{opacity:1})
-        .to('.circle-img.to-left',{yPercent:-100},'0')
-        .to('.circle-img.to-right',{yPercent:100},'0')
+        .to('.circle-img.to-left',{yPercent:-150},'0')
+        .to('.circle-img.to-right',{yPercent:50},'0')
         .to('.circle__inner', { y: 10, opacity: 0, duration: 0.5, ease: "power1.in" })
         .to('.circle-img-txt',{opacity:1, duration: 0.3, ease: "power2.out"})
         .to({}, {
@@ -207,8 +207,8 @@ ScrollTrigger.matchMedia({
         circleTl3
             .to('.circle-img',{opacity:1})
             .to('.circle__inner', { y: 10, opacity: 0, duration: 0.5, ease: "power1.in" })
-            .to('.circle-img.to-left',{xPercent:-100},'0')
-            .to('.circle-img.to-right',{xPercent:100},'0')
+            .to('.circle-img.to-left',{xPercent:-150},'0')
+            .to('.circle-img.to-right',{xPercent:50},'0')
             .to('.circle-img-txt',{opacity:1})
             .to({}, {
             duration:0.5,
